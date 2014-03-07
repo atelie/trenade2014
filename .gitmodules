@@ -1,0 +1,6 @@
+[submodule "Plugin/MeioUpload"]
+	path = Plugin/MeioUpload
+	url = git://github.com/jrbasso/MeioUpload.git
+[submodule "Plugin/Upload"]
+	path = Plugin/Upload
+	url = git://github.com/josegonzalez/cakephp-upload.git
