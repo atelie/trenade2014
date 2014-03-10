@@ -1,18 +1,19 @@
+$(document).ready(function(){
+    
+  $(".input_course").hide();
+	
+});
+
 function check() {
 	if (category_id.selectedIndex==2) {
-		document.getElementById('area_id').disabled = false;
-		document.getElementById('course_id').disabled = true;
+		document.getElementById('course_id').disabled = false;
+		$(".input_course").show();
 		course_id.selectedIndex = 0;	
 	}
-	else if (category_id.selectedIndex==3) {
-		document.getElementById('area_id').disabled = true;
-		document.getElementById('course_id').disabled = false;
-		area_id.selectedIndex = 0;
-	}
 	else {
-		document.getElementById('area_id').disabled = true;
 		document.getElementById('course_id').disabled = true;
-		area_id.selectedIndex = 0;
+	    $(".input_course").hide();
 		course_id.selectedIndex = 0;
 	}
 }
+

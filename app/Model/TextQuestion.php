@@ -10,12 +10,6 @@ class TextQuestion extends AppModel {
 					'message' => 'Selecione uma categoria.'
 				)
 			),
-			'area_id'=> array(
-				'required' => array(
-					'rule' => 'verificaIndices',
-					'message' => 'Selecione uma area.'
-				)
-			),
 			'course_id'=> array(
 				'required' => array(
 					'rule' => 'verificaIndices',
@@ -51,13 +45,6 @@ class TextQuestion extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Area' => array(
-			'className' => 'Area',
-			'foreignKey' => 'area_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'Course' => array(
 			'className' => 'Course',
 			'foreignKey' => 'course_id',
@@ -69,14 +56,10 @@ class TextQuestion extends AppModel {
 
 	function verificaIndices(){
 			$valor = $this->data['TextQuestion'];
-			if($valor['category_id'] == '0'){
-				
+			if($valor['category_id'] == '1' || $valor['answer_text'] == null){
 				return false;
 			}	
-			if($valor['category_id'] == '2' and $valor['area_id'] == '0'){
-				return false;
-			}
-			if($valor['category_id'] == '3' and $valor['course_id'] == '0'){
+			if($valor['category_id'] == '2' and $valor['course_id'] == '0'){
 				return false;
 			}
 			return true;

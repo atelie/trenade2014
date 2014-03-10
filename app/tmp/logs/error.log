@@ -3397,3 +3397,146 @@ Stack Trace:
 #1 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /home/webgoal2/ProjetoPHP/www/trenade/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2014-03-10 19:42:31 Error: [MissingViewException] View file "/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/Exams/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/Exams/index.ctp',
+)
+Request URL: /trenade2014/exams/index
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ExamsController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/webgoal2/ProjetoPHP/www/trenade2014/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-10 19:42:35 Error: [MissingViewException] View file "/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/Exams/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/Exams/index.ctp',
+)
+Request URL: /trenade2014/exams
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ExamsController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/webgoal2/ProjetoPHP/www/trenade2014/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-03-10 20:06:32 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /trenade2014/login
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-03-10 20:18:41 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 8]
+2014-03-10 20:18:41 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 8, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 8, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:19:07 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 8]
+2014-03-10 20:19:07 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 8, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 8, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:19:08 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 8]
+2014-03-10 20:19:08 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 8, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 8, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:19:33 Error: Fatal Error (4): syntax error, unexpected ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 6]
+2014-03-10 20:19:33 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 6, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 6, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:19:36 Error: Fatal Error (4): syntax error, unexpected ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 6]
+2014-03-10 20:19:36 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 6, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 6, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:20:01 Error: Fatal Error (4): syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 7]
+2014-03-10 20:20:01 Error: [FatalErrorException] syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:20:04 Error: Fatal Error (4): syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 7]
+2014-03-10 20:20:04 Error: [FatalErrorException] syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:20:06 Error: Fatal Error (4): syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 7]
+2014-03-10 20:20:06 Error: [FatalErrorException] syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:20:06 Error: Fatal Error (4): syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 7]
+2014-03-10 20:20:06 Error: [FatalErrorException] syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:20:06 Error: Fatal Error (4): syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 7]
+2014-03-10 20:20:06 Error: [FatalErrorException] syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-03-10 20:20:13 Error: Fatal Error (4): syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/home/webgoal2/ProjetoPHP/www/trenade2014/app/View/AltQuestions/add.ctp, line 7]
+2014-03-10 20:20:13 Error: [FatalErrorException] syntax error, unexpected ''div'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /trenade2014/AltQuestions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/webgoal2/...', 7)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/webgoal2/...', 7, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade2014/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

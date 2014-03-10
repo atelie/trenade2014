@@ -30,7 +30,6 @@ class TextQuestionsController extends AppController {
 
 	public function add() {
 		$this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
-        $this->set('areas', array('[Selecione]') + $this->TextQuestion->Area->find('list'));
         $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
 
 		if ($this->request->is('post')) {
@@ -49,7 +48,6 @@ class TextQuestionsController extends AppController {
 	public function edit($id=null) {
         $this->TextQuestion->id = $id;
         $this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
-        $this->set('areas', array('[Selecione]') + $this->TextQuestion->Area->find('list'));
         $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
 
         if($this->request->isPost()) {

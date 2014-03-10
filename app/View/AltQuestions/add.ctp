@@ -1,3 +1,14 @@
+ <?php 
+ 
+ 	$input_course = array(
+		'label' => 'Curso: ', 
+		'disabled', 
+		'id' => 'course_id',
+        'div' => array(
+        'class' => 'input_course',
+    )); 
+
+?>
 
 <h1>Cadastro de Questões Alternativas</h1>
 <?php
@@ -10,15 +21,7 @@
 		'onchange' => 'check(this);', 
 		'id' => 'category_id'));
 
-	echo $this->Form->input('area_id', array(
-		'label' => 'Área: ', 
-		'disabled', 
-		'id' => 'area_id'));
-
-	echo $this->Form->input('course_id', array(
-		'label' => 'Curso: ', 
-		'disabled', 
-		'id' => 'course_id'));
+	echo $this->Form->input('course_id', $input_course);	
 
 	echo $this->Form->input('question_text', array(
 		'label' => 'Enunciado: ',

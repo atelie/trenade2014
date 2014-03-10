@@ -9,11 +9,6 @@
 			'onchange' => 'check(this);',
 			'id' => 'category_id'));
 
-		echo $this->Form->input('area_id', array(
-			'label' => 'Área: ',
-			'id' => 'area_id',
-			'disabled'));
-		
 		echo $this->Form->input('course_id', array(
 			'label' => 'Curso: ',
 			'id' => 'course_id',
