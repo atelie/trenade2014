@@ -8,8 +8,17 @@
         }
 
         public function default_student(){
+
         	$this->set('courses', array('[Selecione]') + $this->Course->find('list'));
 
         }
+
+        public function exam() {
+	
+			print_r('CuRSO : '); 
+		
+		}
+
+     
+       
     }
-?>

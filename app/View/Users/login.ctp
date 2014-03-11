@@ -33,12 +33,13 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-body">
+                    
                            <?php echo $this->Form->create('User',$form_user);?>
                            <?php 
                               echo $this->Form->input('username', $input_login);
                               echo $this->Form->input('password', $input_password);
                             ?>
-                            <?php echo $this->Form->end($entrar); ?>                          
+                            <?php echo $this->Form->end($entrar); ?>                         
                     </div>
                 </div>
             </div>

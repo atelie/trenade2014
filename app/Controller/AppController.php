@@ -50,6 +50,7 @@ class AppController extends Controller {
         $this->Auth->allow();
     }
     /*
+    
     var $permissoes = array(
         'users' => array('logout' => true),
         'exams' => array('index' => true)
