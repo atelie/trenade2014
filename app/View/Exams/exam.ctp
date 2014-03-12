@@ -19,8 +19,7 @@
 			</div>
 		</div>
 		<div class="content">			
-			<h1>Simulado .....</h1>
-			
+			<h1>Simulado de <?= $nome_curso['Exams']['course_id'] ;?></h1>
 		</div>
 	</div>
 </body>

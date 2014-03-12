@@ -1,5 +1,5 @@
 <?php
-App::uses('AppModel', 'Model', 'Controller/Component');
+//App::uses('AppModel', 'Model', 'Controller/Component');
 class Exam extends AppModel {
 
 	public $validate = array(
@@ -20,7 +20,7 @@ class Exam extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Course' => array(
+			'Course' => array(
 			'className' => 'Course',
 			'foreignKey' => 'course_id',
 			'conditions' => '',
@@ -29,7 +29,7 @@ class Exam extends AppModel {
 		)
 	);
 
-	public $hasMany = array('AltQuestions', 'TextQuestions');
+	//public $hasMany = array('AltQuestions', 'TextQuestions');
 		
 	function gerarSimulado(){
 			
