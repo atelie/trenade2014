@@ -14,19 +14,20 @@
         }
 
         public function exam() {
-
             if ($this->request->is('post')) {
 
-               $id_busca = $this->request->data['Exams']['course_id'];
+                
 
-                $nome_curso = $this->Course->find('list');
+                $id_busca = $this->request->data['Exams']['course_id'];
+
+                $this->Course->find('first', 
+                array( 'conditions' => array('Course.id' => $id_busca) ));
+
+                $nome_curso = $this->request->data['Courses']['name'];
 
                 debug($nome_curso);
-
-                }else {
-
+            }else {
                 $this->redirect(array('action' => 'default_student'));
-
             }
 
         }  
