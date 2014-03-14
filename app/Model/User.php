@@ -16,10 +16,7 @@
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o nome!'
 	       		),
-	       		'alphaNumeric'/* => array(
-		        	'rule' => array('minLenght'),
-		        	'message' => 'Digite o nome!'
-	       		)*/
+	       		'alphaNumeric'
 	    	),
 
 	    	'email' => array(
