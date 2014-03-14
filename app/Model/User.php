@@ -7,14 +7,19 @@
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o registro!'
-	       		)
+	       		),
+		        '/^.{6,40}$/'
 	    	),
 
 	    	'name' => array(
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o nome!'
-	       		)
+	       		),
+	       		'alphaNumeric'/* => array(
+		        	'rule' => array('minLenght'),
+		        	'message' => 'Digite o nome!'
+	       		)*/
 	    	),
 
 	    	'email' => array(
@@ -55,6 +60,5 @@
     		$senhas = $this->data['User'];
         	return ($senhas['password'] == $senhas['confirm_password']);
     	}
-
 	}
 ?>

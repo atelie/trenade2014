@@ -16,7 +16,7 @@ class UserTest extends CakeTestCase {
 	}
 
 	public function testNameCannotBeSpecialCharacter(){
-		$this->User->set(array('User' => array('name' => '$%23sdc')));
+		$this->User->set(array('User' => array('name' => 'Jo@o!@#@"$%$?/')));
 		$this->assertFalse($this->User->validates());
 	}
 
