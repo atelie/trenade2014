@@ -18,8 +18,8 @@
 				?>
 			</div>
 		</div>
-		<div class="content">			
-			<h1>Simulado de <?= $course_name;?></h1>
+		<div class="content">		
+			<h1>Simulado de <?php echo $nome_curso;?></h1>
 		</div>
 	</div>
 </body>

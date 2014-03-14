@@ -13,6 +13,7 @@
                 $course = $this->Course->find('first', 
                     array( 'conditions' => array('Course.id' => $id_busca)));
                 $course_name = $course['Course']['name'];
+                $this->set('nome_curso', $course_name);
             }else {
                 $this->redirect(array('action' => 'index'));
             }
