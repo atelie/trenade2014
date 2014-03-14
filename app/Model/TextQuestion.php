@@ -55,16 +55,14 @@ class TextQuestion extends AppModel {
 	);
 
 	function verificaIndices(){
-			$valor = $this->data['TextQuestion'];
-			if($valor['category_id'] == '1' || $valor['answer_text'] == null){
-				return false;
-			}	
-			if($valor['category_id'] == '2' and $valor['course_id'] == '0'){
-				return false;
-			}
-			return true;
+		$valor = $this->data['TextQuestion'];
+		if($valor['category_id'] == '1' and $valor['answer_text'] == null){
+			return false;
+		}	
+		if($valor['category_id'] == '2' and $valor['course_id'] == '0' and $valor['answer_text'] == null){
+			return false;
 		}
+		return true;
+	}
 
-
-			
 }

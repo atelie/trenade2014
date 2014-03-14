@@ -14,23 +14,12 @@ class TextQuestionTest extends CakeTestCase {
 		$this->TextQuestion->set(array('TextQuestion' => array('question_text' => '')));
 		$this->assertFalse($this->TextQuestion->validates());
 	}
-	
-	public function testCategoryIdCannotBeZero(){
-		$this->TextQuestion->set(array('TextQuestion' => array('category_id' => '0', 'course_id' => '', 'answer_id' => '0')));
-		$this->assertFalse($this->TextQuestion->verificaIndices());
-	}
-
-	public function testCategoryIdShouldBeDiferentOfZero(){
-		$this->TextQuestion->set(array('TextQuestion' => array('category_id' => '1', 'course_id' => '', 'answer_id' => '')));
+	public function testCourseIdShouldBeDifferentOfZeroIfCategoryIdEqualToTwo(){
+		$this->TextQuestion->set(array('TextQuestion' => array('category_id' => '2', 'course_id' => '1', 'answer_text' => '')));
 		$this->assertTrue($this->TextQuestion->verificaIndices());
 	}
-
-	public function testCourseIdShouldBeDiferentOfZeroIfCategoryIdEqualToTwo(){
-		$this->TextQuestion->set(array('TextQuestion' => array('category_id' => '2', 'course_id' => '1', 'answer_id' => '')));
-		$this->assertTrue($this->TextQuestion->verificaIndices());
-	}
-	public function testCourseIdCannotBeZeroIfCategoryIdEqualToThree(){
-		$this->TextQuestion->set(array('TextQuestion' => array('category_id' => '2', 'course_id' => '0', 'answer_id' => '')));
+	public function testCourseIdCannotBeZeroIfCategoryIdEqualToTwo(){
+		$this->TextQuestion->set(array('TextQuestion' => array('category_id' => '2', 'course_id' => '0', 'answer_text' => '')));
 		$this->assertFalse($this->TextQuestion->verificaIndices());
 	}
 }
