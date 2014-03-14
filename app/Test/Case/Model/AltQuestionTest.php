@@ -41,37 +41,27 @@ class AltQuestionTest extends CakeTestCase {
 	}
 
 	public function testCategoryIdCannotBeZero(){
-		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '0', 'area_id' => '', 'course_id' => '', 'answer_id' => '0')));
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '0', 'course_id' => '', 'answer_id' => '0')));
 		$this->assertFalse($this->AltQuestion->verificaIndices());
 	}
 
-	public function testCategoryIdShouldBeDiferentOfZero(){
-		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '1', 'area_id' => '', 'course_id' => '', 'answer_id' => '')));
+	public function testCategoryIdShouldBeDifferentOfZero(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '1', 'course_id' => '', 'answer_id' => '')));
 		$this->assertTrue($this->AltQuestion->verificaIndices());
 	}
 
-	public function testAreaIdShouldBeDiferentOfZeroIfCategoryIdEqualToTwo(){
-		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '2', 'area_id' => '1', 'course_id' => '', 'answer_id' => '')));
+	public function testCourseIdShouldBeDifferentOfZeroIfCategoryIdEqualToTwo(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '2', 'course_id' => '1', 'answer_id' => '')));
 		$this->assertTrue($this->AltQuestion->verificaIndices());
 	}
 
-	public function testAreaIdCannotBeZeroIfCategoryIdEqualToTwo(){
-		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '2', 'area_id' => '0', 'course_id' => '', 'answer_id' => '')));
-		$this->assertFalse($this->AltQuestion->verificaIndices());
-	}
-
-	public function testCourseIdShouldBeDiferentOfZeroIfCategoryIdEqualToThree(){
-		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '3', 'area_id' => '', 'course_id' => '1', 'answer_id' => '')));
-		$this->assertTrue($this->AltQuestion->verificaIndices());
-	}
-
-	public function testCourseIdCannotBeZeroIfCategoryIdEqualToThree(){
-		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '3', 'area_id' => '', 'course_id' => '0', 'answer_id' => '')));
+	public function testCourseIdCannotBeZeroIfCategoryIdEqualToTwo(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '2', 'course_id' => '0', 'answer_id' => '')));
 		$this->assertFalse($this->AltQuestion->verificaIndices());
 	}
 
 	public function testAnswerCannotBeZero(){
-		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '0', 'area_id' => '0', 'course_id' => '0', 'answer_id' => '0')));
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '0', 'course_id' => '0', 'answer_id' => '0')));
 		$this->assertFalse($this->AltQuestion->verificaIndices());
 	}
 
