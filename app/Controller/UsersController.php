@@ -13,7 +13,7 @@
                     $this->redirect(array('controller' => 'users', 'action' => 'index'));   
                 }
                 else {
-                    $this->redirect(array('controller' => 'exams', 'action' => 'default_student'));
+                    $this->redirect(array('controller' => 'exams', 'action' => 'index'));
                 }
                 
             }
