@@ -23,15 +23,28 @@
 
 			<?php
 				$numeroQ = 0;
-				foreach ($random_questions as $random_question) {
+
+
+				
+
+				foreach ($random_questions as $random_question) {					
 					$numeroQ++;
-					echo 
-					'<br><br><br>'.$numeroQ.') '.$pergunta = $random_question['AltQuestion']['question_text'].
-					'<br><br>A) '.$respostaA = $random_question['AltQuestion']['answerA'].
-					'<br>B) '.$respostaB = $random_question['AltQuestion']['answerB'].
-					'<br>C) '.$respostaC = $random_question['AltQuestion']['answerC'].
-					'<br>D) '.$respostaD = $random_question['AltQuestion']['answerD'].
-					'<br>E) '.$respostaE = $random_question['AltQuestion']['answerE'];
+					echo '<br><p>'.$numeroQ.') '.$pergunta = $random_question['AltQuestion']['question_text'].'</p>';
+					
+					$options = array(
+						'1' => '<br>A) '.$random_question['AltQuestion']['answerA'],
+						'2' => 'B) '.$random_question['AltQuestion']['answerB'],
+						'3' => 'C) '.$random_question['AltQuestion']['answerC'],
+						'4' => 'D) '.$random_question['AltQuestion']['answerD'],
+						'5' => 'E) '.$random_question['AltQuestion']['answerE']
+					);
+
+					$attributes = array(
+						'legend' => false,
+						'value' => false,
+					);
+
+					echo $this->Form->radio('type', $options, $attributes);
 				}
 
 			?>

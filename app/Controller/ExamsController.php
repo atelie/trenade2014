@@ -20,7 +20,7 @@
                 
 
                 $this->set('random_questions', $this->AltQuestion->find('all', array(
-                'fields' => array('DISTINCT AltQuestion.id'),
+                'fields' => array('DISTINCT id','question_text','answerA','answerB','answerC','answerD','answerE'),
                 'conditions' => array('AltQuestion.course_id' => $id_busca), 
                 'order' => 'rand()',
                 'limit' => 15
