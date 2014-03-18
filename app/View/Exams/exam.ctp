@@ -44,7 +44,7 @@
 						'value' => false,
 					);
 
-					echo $this->Form->radio('type', $options, $attributes);
+					echo $this->Form->radio($random_question['AltQuestion']['id'], $options, $attributes);
 				}
 
 			?>
