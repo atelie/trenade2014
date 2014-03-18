@@ -20,14 +20,11 @@
                 
 
                 $this->set('random_questions', $this->AltQuestion->find('all', array(
-                //'fields' => array('DISTINCT altquestion_id'),
+                'fields' => array('DISTINCT AltQuestion.id'),
                 'conditions' => array('AltQuestion.course_id' => $id_busca), 
                 'order' => 'rand()',
                 'limit' => 15
                 )));
-
-                
-
 
             }else {
                 $this->redirect(array('action' => 'index'));
