@@ -43,31 +43,42 @@ class AppController extends Controller {
             'logoutRedirect' => array(
                 'controller' => 'users', 
                 'action' => 'login'),
-        )
-    );
-    
+            )
+        );
+    /*
     function beforeFilter() {
         $this->Auth->allow();
-    }
-    /*
+        $this->set('ehProfessor', $this->Session->read('Auth.User.teacher'));
+    } */
+
     
-    var $permissoes = array(
+    var $permissoesAluno = array(
         'users' => array('logout' => true),
         'exams' => array('index' => true)
-    );
+        );
+
+    var $permissoesProfessor = array(
+        'users' => array('logout' => true, 'index' => true),
+        'altquestions' => array('add' => true)
+        );
 
     
 
     public function beforeFilter() {
         parent::beforeFilter();
         $estaNaLogin = ($this->request->params['controller'] == 'users' AND $this->request->params['action'] == 'login');
-        $eProfessor = $this->Auth->user('teacher');
-        $alunoTemPermissao = isset($this->permissoes[$this->request->params['controller']][$this->request->params['action']]);
+        if($estaNaLogin) return;
 
-        if (!$estaNaLogin AND !$eProfessor AND !$alunoTemPermissao) {
-            $this->Session->setFlash(__('<script> alert("Permissão negada."); </script>', true));
-            $this->redirect(array('controller' => 'users', 'action' => 'login'));
-        }
+        $eProfessor = $this->Auth->user('teacher');
+        $this->set('ehProfessor', $eProfessor);
+
+        $professorTemPermissao = !empty($this->permissoesProfessor[$this->request->params['controller']][$this->request->params['action']]);
+        if($eProfessor AND $professorTemPermissao) return;
+        
+        $alunoTemPermissao = !empty($this->permissoesAluno[$this->request->params['controller']][$this->request->params['action']]);
+        if(!$eProfessor AND $alunoTemPermissao) return;
+
+        $this->Session->setFlash(__('<script> alert("Permissão negada."); </script>', true));
+        $this->redirect(array('controller' => 'users', 'action' => 'login'));    
     }
-    */
 }
