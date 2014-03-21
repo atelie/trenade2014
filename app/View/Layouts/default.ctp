@@ -10,7 +10,7 @@
 <?php 
 		echo $this->Html->css('bootstrap.css');
 		echo $this->Html->css('sb-admin.css');
-		echo $this->Html->css('/font-awesome/css/font-awesome.min.css');	
+		echo $this->Html->css('font-awesome/css/font-awesome.min.css');	
 		echo $this->Html->css('morris-0.4.3.min.css');
 	?>
 
@@ -74,9 +74,9 @@
 		echo $this->Html->script('jquery-1.10.2.js');
 		echo $this->Html->script('bootstrap.js');
 
-		echo $this->Html->script('/morris/chart-data-morris.js');
-		echo $this->Html->script('/tablesorter/jquery.tablesorter.js');
-		echo $this->Html->script('/trenade2014/app/webroot/js/tablesorter/tables.js');
+		echo $this->Html->script('morris/chart-data-morris.js');
+		echo $this->Html->script('tablesorter/jquery.tablesorter.js');
+		echo $this->Html->script('trenade2014/app/webroot/js/tablesorter/tables.js');
 		echo $this->Html->script('raphael-min.js');
 		echo $this->Html->script('morris-0.4.3.min.js');
 		echo $this->Html->script('trenade.js');
