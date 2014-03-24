@@ -65,7 +65,7 @@ class TextQuestionsController extends AppController {
 	public function delete ($id){
         $this->TextQuestion->delete($id);
         $this->redirect(array(
-            'controller' => 'users', 
+            'controller' => 'textquestions', 
             'action' => 'index'));
 
     }

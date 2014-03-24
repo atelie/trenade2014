@@ -84,11 +84,12 @@
           <li class="dropdown user-dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo($nomeUser); ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><i class="fa fa-power-off"></i>
+              <li>
                 <?php echo $this->Html->link(__('Logout'), array(
                   'controller' => 'users', 
                   'action' => 'logout'
                   ));?>
+                <i class="fa fa-power-off" style='float: right !important;margin-top: -20px;'></i>
                 </li>
               </ul>
             </li>

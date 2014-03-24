@@ -58,7 +58,7 @@
     public function delete ($id){
         $this->AltQuestion->delete($id);
         $this->redirect(array(
-            'controller' => 'users', 
+            'controller' => 'altquestions', 
             'action' => 'index'));
 
     }

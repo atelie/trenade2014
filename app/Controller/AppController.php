@@ -45,25 +45,18 @@ class AppController extends Controller {
                 'action' => 'login'),
             )
         );
-    /*
-    function beforeFilter() {
-        $this->Auth->allow();
-        $this->set('ehProfessor', $this->Session->read('Auth.User.teacher'));
-    } */
 
-    
     var $permissoesAluno = array(
         'users' => array('logout' => true),
-        'exams' => array('index' => true,'exam'=>true)
-
+        'exams' => array('index' => true,'exam' => true)
         );
 
     var $permissoesProfessor = array(
         'users' => array('logout' => true, 'index' => true),
         'altquestions' => array('index' => true,'add' => true,'edit' => true,'delete' => true),
         'textquestions' => array('index' => true,'view' => true,'add' => true,'edit' => true,'delete'=>true),
-        'categories' => array('index' => true,'add' => true),
-        'courses'=>array('add'=>true)
+        'courses' => array('index' => true, 'add' => true)
+
         );
 
     
