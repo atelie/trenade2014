@@ -19,7 +19,6 @@
 
   <div id="wrapper">
 
-    <?php echo $ehProfessor; ?>
     <?php echo $this->Session->flash(); ?>
     
     <!-- Sidebar -->
@@ -39,8 +38,42 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
           <?php if($ehProfessor): ?>
-            <li><a href=""><i class="fa fa-edit"></i> Questões Alternativas </a></li>
-            <li><a href=""><i class="fa fa-edit"></i> Questões Dissertativas </a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Questões Alternativas <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Adicionar'), array(
+                      'controller' => 'altquestions', 'action' => 'add'));
+                    ?>
+                </li>
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Gerenciar'), array(
+                      'controller' => 'altquestions', 'action' => 'index'));
+                    ?>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Questões Dissertativas <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Adicionar'), array(
+                      'controller' => 'textquestions', 'action' => 'add'));
+                    ?>
+                </li>
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Gerenciar'), array(
+                      'controller' => 'textquestions', 'action' => 'index'));
+                    ?>
+                </li>
+              </ul>
+            </li>
           <?php else:  ?>
             <li><a href=""><i class="fa fa-edit"></i> Gerar Simulado </a></li>
           <?php endif; ?>
@@ -49,11 +82,11 @@
         <ul class="nav navbar-nav navbar-right navbar-user">
 
           <li class="dropdown user-dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> NOME USUARIO <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo($nomeUser); ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><i class="fa fa-power-off"></i>
                 <?php echo $this->Html->link(__('Logout'), array(
-                  'controller' => 'Users', 
+                  'controller' => 'users', 
                   'action' => 'logout'
                   ));?>
                 </li>

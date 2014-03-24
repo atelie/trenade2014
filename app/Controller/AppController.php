@@ -54,12 +54,16 @@ class AppController extends Controller {
     
     var $permissoesAluno = array(
         'users' => array('logout' => true),
-        'exams' => array('index' => true)
+        'exams' => array('index' => true,'exam'=>true)
+
         );
 
     var $permissoesProfessor = array(
         'users' => array('logout' => true, 'index' => true),
-        'altquestions' => array('add' => true)
+        'altquestions' => array('index' => true,'add' => true,'edit' => true,'delete' => true),
+        'textquestions' => array('index' => true,'view' => true,'add' => true,'edit' => true,'delete'=>true),
+        'categories' => array('index' => true,'add' => true),
+        'courses'=>array('add'=>true)
         );
 
     
@@ -71,6 +75,8 @@ class AppController extends Controller {
 
         $eProfessor = $this->Auth->user('teacher');
         $this->set('ehProfessor', $eProfessor);
+        $userName = $this->Auth->user('name');
+        $this->set('nomeUser', $userName);
 
         $professorTemPermissao = !empty($this->permissoesProfessor[$this->request->params['controller']][$this->request->params['action']]);
         if($eProfessor AND $professorTemPermissao) return;
