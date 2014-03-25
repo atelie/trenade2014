@@ -1645,9 +1645,10 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 label {
-  display: inline-block;
-  margin-bottom: 5px;
-  font-weight: bold;
+    display: table-cell;
+    margin-bottom: 5px;
+    padding-bottom: 16px;
+    padding-left: 10px;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -1656,6 +1657,9 @@ input[type="search"] {
 }
 input[type="radio"],
 input[type="checkbox"] {
+  display: table-cell;
+  float: left;
+  line-height: normal;
   margin: 4px 0 0;
   margin-top: 1px \9;
   /* IE8-9 */

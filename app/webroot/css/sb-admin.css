@@ -162,4 +162,22 @@ table.tablesorter thead tr th:hover {
     padding-right: 15px !important;
   }
 
+ /*Tela de gerar simulado*/
+
+  .form-sumilado {
+    margin: 0 auto;
+    text-align: center;
+    width: 31%;
+  }
+
+  .form-gerarsimulado {
+    padding-bottom: 26px;
+  }
+  
+  .questions {
+    border-bottom: 1px solid #4C4C4C;
+}
+ 
+
+
 }

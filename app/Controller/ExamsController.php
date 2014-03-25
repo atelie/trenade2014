@@ -4,7 +4,7 @@
         public $uses = array('User', 'Exam', 'Course', 'AltQuestion', 'TextQuestion');
 
         public function index(){
-            $this->set('courses', array('[Selecione]') + $this->Course->find('list'));
+            $this->set('courses', array('Curso:') + $this->Course->find('list'));
         }
 
         public function exam() {
