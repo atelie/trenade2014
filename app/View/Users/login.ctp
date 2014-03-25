@@ -2,7 +2,7 @@
     
     $entrar = array(
     'label' => 'Entrar',
-    'class' => 'btn btn-lg btn-success btn-block'
+    'class' => 'btn btn-lg btn-primary btn-block'
     );
 
     $input_login = array(
