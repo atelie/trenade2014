@@ -1,10 +1,11 @@
 $(document).ready(function(){
-    
-  $(".input_course").hide();
-	
+
+	check();
+
 });
 
-function check() {
+function check(){
+
 	if (category_id.selectedIndex==2) {
 		document.getElementById('course_id').disabled = false;
 		$(".input_course").show();
@@ -15,5 +16,6 @@ function check() {
 	    $(".input_course").hide();
 		course_id.selectedIndex = 0;
 	}
-}
+};
+
 

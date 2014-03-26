@@ -53,14 +53,14 @@ class AppController extends Controller {
 
     var $permissoesProfessor = array(
         'users' => array('logout' => true, 'index' => true),
-        'altquestions' => array('index' => true,'add' => true,'edit' => true,'delete' => true),
-        'textquestions' => array('index' => true,'view' => true,'add' => true,'edit' => true,'delete'=>true),
-        'courses' => array('index' => true, 'add' => true)
-
+        'alt_questions' => array('index' => true,'add' => true,'edit' => true,'delete' => true),
+        'text_questions' => array('index' => true,'view' => true,'add' => true,'edit' => true,'delete' => true),
+        'courses' => array('index' => true, 'add' => true),
+        'categories' => array('index' => true, 'add' => true),
+        'answers' => array('index' => true, 'add' => true)
         );
 
     
-
     public function beforeFilter() {
         parent::beforeFilter();
         $estaNaLogin = ($this->request->params['controller'] == 'users' AND $this->request->params['action'] == 'login');
@@ -79,5 +79,5 @@ class AppController extends Controller {
 
         $this->Session->setFlash(__('<script> alert("Permissão negada."); </script>', true));
         $this->redirect(array('controller' => 'users', 'action' => 'login'));    
-    }
+    } 
 }

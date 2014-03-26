@@ -31,7 +31,7 @@
                     $this->Session->setFlash(__('<script> alert("Questão adicionada com sucesso!"); </script>', true));
                     $this->redirect(array('action' => 'add'));
                 } else {
-                   $this->Session->setFlash(__('<script> alert("Não pode ser salvo"); </script>',true));
+                   $this->Session->setFlash(__('<script> alert("Não pode ser salvo!"); </script>',true));
                    $this->redirect(array('action' => 'add'));
                 }
             }
@@ -45,7 +45,7 @@
         $this->set('answers', array('[Selecione]') + $this->Answer->find('list'));
         if($this->request->isPost()) {
             if ($this->AltQuestion->save($this->request->data)) {
-                $this->Session->setFlash('<script> alert("Questão editada com sucesso!"); </script>', true);
+                $this->Session->setFlash(__('<script> alert("Questão editada com sucesso!"); </script>', true));
                 $this->redirect(array('action' => 'index', $this->AltQuestion->id));
             }
         }
@@ -58,9 +58,8 @@
     public function delete ($id){
         $this->AltQuestion->delete($id);
         $this->redirect(array(
-            'controller' => 'altquestions', 
+            'controller' => 'alt_questions', 
             'action' => 'index'));
-
     }
 }
 ?>

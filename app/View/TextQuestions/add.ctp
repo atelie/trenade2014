@@ -1,26 +1,35 @@
 <?php 
-	echo $this->Form->create('TextQuestion'); 
+ 
+ 	$input_course = array(
+	 	'label' => 'Curso: ', 
+	 	'disabled', 
+	 	'id' => 'course_id',
+	 	'div' => array(
+	 	'class' => 'input_course',
+ 	)); 
 ?>
-	<fieldset>
-		<h1>Cadastro de Questões Dissertativas</h1>
+
+ <h1>Cadastro de Questões Dissertativas</h1>
+	
 	<?php
+
+		echo $this->Form->create('TextQuestion', array(
+		'action' => 'add', 'type' => 'file'));
+	
 		echo $this->Form->input('category_id', array(
-			'label' => 'Categoria: ',
-			'onchange' => 'check(this);',
+			'label' => 'Categoria: ', 
+			'onchange' => 'check(this);', 
 			'id' => 'category_id'));
 
-		echo $this->Form->input('course_id', array(
-			'label' => 'Curso: ',
-			'id' => 'course_id',
-			'disabled'));
-		
+		echo $this->Form->input('course_id', $input_course);	
+
 		echo $this->Form->input('question_text', array(
-			'label' => 'Enunciado: '));
-		
+			'label' => 'Enunciado: ',
+			'id' => 'question_text'));
+
 		echo $this->Form->input('answer_text', array(
 			'label' => 'Resposta: '));
+
+		echo $this->Form->end(__('Salvar'));
+
 	?>
-	</fieldset>
-<?php 
-	echo $this->Form->end(__('Salvar')); 
-?>

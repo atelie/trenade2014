@@ -1,26 +1,37 @@
 <?php 
-	echo $this->Form->create('TextQuestion', array('action' => 'edit')); 
+ 
+ 	$input_course = array(
+		'label' => 'Curso: ', 
+		'id' => 'course_id',
+        'div' => array(
+        'class' => 'input_course',
+    )); 
+
 ?>
-	<fieldset>
-		<legend><?php echo __('Editar Questões Dissertativas'); ?></legend>
-	<?php
-		echo $this->Form->input('category_id', array(
-			'label' => 'Categoria: ',
-			'onchange' => 'check(this);',
-			'id' => 'category_id'));
-		
-		echo $this->Form->input('course_id', array(
-			'label' => 'Curso: ',
-			'id' => 'course_id',
-			'disabled'));
-		
-		echo $this->Form->input('question_text', array(
-			'label' => 'Enunciado: '));
-		
-		echo $this->Form->input('answer_text', array(
-			'label' => 'Resposta: '));
-	?>
-	</fieldset>
-<?php 
-	echo $this->Form->end(__('Salvar')); 
+
+<h1>Editar Questões Dissertativas</h1>
+<?php
+
+	echo $this->Form->create('TextQuestion', array(
+		'action' => 'edit'));
+
+
+	echo $this->Form->input('category_id', array(
+		'label' => 'Categoria: ', 
+		'onchange' => 'check(this);', 
+		'id' => 'category_id'));
+
+	echo $this->Form->input('course_id', $input_course);	
+
+	echo $this->Form->input('question_text', array(
+		'label' => 'Enunciado: ',
+		'id' => 'question_text'));
+
+	echo $this->Form->input('answer_text', array(
+		'label' => 'Resposta correta: '));
+
+	echo $this->Form->end(__('Salvar'));
+
 ?>
+
+

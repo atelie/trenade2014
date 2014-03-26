@@ -1,42 +1,52 @@
 <?php 
-	echo $this->Form->create('AltQuestion', array('action' => 'edit')); 	
+ 
+ 	$input_course = array(
+		'label' => 'Curso: ', 
+		'id' => 'course_id',
+        'div' => array(
+        'class' => 'input_course',
+    )); 
+
 ?>
-	<fieldset>
-		<legend><?php echo __('Editar Questões Alternativas'); ?></legend>
-	<?php
-		echo $this->Form->input('category_id', array(
-			'label' => 'Categoria: ',
-			'onchange' => 'check(this);',
-			'id' => 'category_id'));
-		
-		echo $this->Form->input('course_id', array(
-			'label' => 'Curso: ',
-			'id' => 'course_id',
-			'disabled'));
-		
-		echo $this->Form->input('question_text', array(
-		'label' => 'Enunciado: '));
 
-		echo $this->Form->input('answerA', array(
-			'label' => 'A): '));
+<h1>Editar Questões Alternativas</h1>
+<?php
 
-		echo $this->Form->input('answerB', array(
-			'label' => 'B): '));
+	echo $this->Form->create('AltQuestion', array(
+		'action' => 'edit'));
 
-		echo $this->Form->input('answerC', array(
-			'label' => 'C): '));
 
-		echo $this->Form->input('answerD', array(
-			'label' => 'D): '));
+	echo $this->Form->input('category_id', array(
+		'label' => 'Categoria: ', 
+		'onchange' => 'check(this);', 
+		'id' => 'category_id'));
 
-		echo $this->Form->input('answerE', array(
-			'label' => 'E): '));
+	echo $this->Form->input('course_id', $input_course);	
 
-		echo $this->Form->input('answer_id', array(
-			'label' => 'Resposta correta: '));
+	echo $this->Form->input('question_text', array(
+		'label' => 'Enunciado: ',
+		'id' => 'question_text'));
 
-	?>
-	</fieldset>
-<?php 
-	echo $this->Form->end(__('Salvar')); 
+	echo $this->Form->input('answerA', array(
+		'label' => 'A): '));
+
+	echo $this->Form->input('answerB', array(
+		'label' => 'B): '));
+
+	echo $this->Form->input('answerC', array(
+		'label' => 'C): '));
+
+	echo $this->Form->input('answerD', array(
+		'label' => 'D): '));
+
+	echo $this->Form->input('answerE', array(
+		'label' => 'E): '));
+
+	echo $this->Form->input('answer_id', array(
+		'label' => 'Resposta correta: '));
+
+	echo $this->Form->end(__('Salvar'));
+
 ?>
+
+

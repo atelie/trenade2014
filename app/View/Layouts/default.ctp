@@ -45,13 +45,13 @@
                 <li>
                     <?php
                       echo $this->Html->link(__('Adicionar'), array(
-                      'controller' => 'altquestions', 'action' => 'add'));
+                      'controller' => 'alt_questions', 'action' => 'add'));
                     ?>
                 </li>
                 <li>
                     <?php
                       echo $this->Html->link(__('Gerenciar'), array(
-                      'controller' => 'altquestions', 'action' => 'index'));
+                      'controller' => 'alt_questions', 'action' => 'index'));
                     ?>
                 </li>
               </ul>
@@ -63,13 +63,13 @@
                 <li>
                     <?php
                       echo $this->Html->link(__('Adicionar'), array(
-                      'controller' => 'textquestions', 'action' => 'add'));
+                      'controller' => 'text_questions', 'action' => 'add'));
                     ?>
                 </li>
                 <li>
                     <?php
                       echo $this->Html->link(__('Gerenciar'), array(
-                      'controller' => 'textquestions', 'action' => 'index'));
+                      'controller' => 'text_questions', 'action' => 'index'));
                     ?>
                 </li>
               </ul>

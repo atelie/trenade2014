@@ -7,7 +7,7 @@ class TextQuestionsController extends AppController {
 
 	public function index() {
 		$this->TextQuestion->recursive = 0;
-		$this->set('textQuestions', $this->paginate());
+		$this->set('TextQuestions', $this->paginate());
 
 		$users = $this->TextQuestion->find('all', 
                 array(
@@ -52,7 +52,7 @@ class TextQuestionsController extends AppController {
 
         if($this->request->isPost()) {
             if ($this->TextQuestion->save($this->request->data)) {
-                $this->Session->setFlash('<script> alert("Questão editada com sucesso!"); </script>', true);
+                $this->Session->setFlash(__('<script> alert("Questão editada com sucesso!"); </script>', true));
                 $this->redirect(array('action' => 'index', $this->TextQuestion->id));
             }
         }
@@ -65,7 +65,7 @@ class TextQuestionsController extends AppController {
 	public function delete ($id){
         $this->TextQuestion->delete($id);
         $this->redirect(array(
-            'controller' => 'textquestions', 
+            'controller' => 'text_questions', 
             'action' => 'index'));
 
     }
