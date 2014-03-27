@@ -7,6 +7,10 @@
 
         }
 
+        public function result(){
+
+        }
+
         public function generate(){
             $this->set('courses', array('[SELECIONE O CURSO]') + $this->Course->find('list'));
         }
