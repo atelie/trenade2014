@@ -1,5 +1,4 @@
 <?php
-//App::uses('AppModel', 'Model', 'Controller/Component');
 class Exam extends AppModel {
 
 	public $validate = array(
@@ -28,15 +27,12 @@ class Exam extends AppModel {
 			'order' => ''
 			)
 		);
-
-	//public $hasMany = array('AltQuestions', 'TextQuestions');
 	
 	function verificaCurso(){
-		$valor = $this->data['Exam']['Course'];
-		debug($valor['course_id']);
-		if($valor['course_id'] == '0'){
-			return false;	
-		} 
+		$simulado = $this->data['Exam'];
+		if($simulado['course_id'] == '0'){
+			return false;
+		}
 		return true;
 	}
 
