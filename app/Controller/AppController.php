@@ -48,7 +48,7 @@ class AppController extends Controller {
 
     var $permissoesAluno = array(
         'users' => array('logout' => true),
-        'exams' => array('index' => true,'exam' => true)
+        'exams' => array('index' => true,'exam' => true, 'generate' => true)
         );
 
     var $permissoesProfessor = array(

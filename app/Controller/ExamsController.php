@@ -4,6 +4,10 @@
         public $uses = array('User', 'Exam', 'Course', 'AltQuestion', 'TextQuestion');
 
         public function index(){
+
+        }
+
+        public function generate(){
             $this->set('courses', array('[SELECIONE O CURSO]') + $this->Course->find('list'));
         }
 
@@ -14,7 +18,7 @@
 
                 if ($id_busca == '0') {
                     $this->Session->setFlash(__('<script> alert("Selecione o curso!"); </script>',true));
-                    $this->redirect(array('action' => 'index'));
+                    $this->redirect(array('action' => 'generate'));
                 } else {
                     $course = $this->Course->find('first', 
                     array( 'conditions' => array('Course.id' => $id_busca)));
@@ -44,7 +48,7 @@
                 }
 
             }else {
-                $this->redirect(array('action' => 'index'));
+                $this->redirect(array('action' => 'generate'));
             }
 
         } 

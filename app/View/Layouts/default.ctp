@@ -75,7 +75,23 @@
               </ul>
             </li>
           <?php else:  ?>
-            <li><a href=""><i class="fa fa-edit"></i> Gerar Simulado </a></li>
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Simulados <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Gerar Simulado'), array(
+                      'controller' => 'exams', 'action' => 'generate'));
+                    ?>
+                </li>
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Resultados Anteriores'), array(
+                      'controller' => 'exams', 'action' => 'result'));
+                    ?>
+                </li>
+              </ul>
+            </li>
           <?php endif; ?>
         </ul>
 
