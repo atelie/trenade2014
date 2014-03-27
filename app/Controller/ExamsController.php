@@ -4,7 +4,7 @@
         public $uses = array('User', 'Exam', 'Course', 'AltQuestion', 'TextQuestion');
 
         public function index(){
-            $this->set('courses', array('Curso:') + $this->Course->find('list'));
+            $this->set('courses', array('[SELECIONE]') + $this->Course->find('list'));
         }
 
         public function exam() {
@@ -16,8 +16,6 @@
                     array( 'conditions' => array('Course.id' => $id_busca)));
                 $course_name = $course['Course']['name'];
                 $this->set('nome_curso', $course_name);
-
-                
 
                 $this->set('random_questions', $this->AltQuestion->find('all', array(
                 'fields' => array('DISTINCT id','question_text','answerA','answerB','answerC','answerD','answerE'),

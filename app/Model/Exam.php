@@ -3,11 +3,11 @@
 class Exam extends AppModel {
 
 	public $validate = array(
-			
-			'course_id'=> array(
-				'required' => array(
-					'rule' => 'verificaIndices',
-					'message' => 'Selecione um curso.'
+		
+		'course_id'=> array(
+			'required' => array(
+				'rule' => 'verificaCurso',
+				'message' => 'Selecione um curso.'
 				)
 			)		
 		);
@@ -19,22 +19,25 @@ class Exam extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
-			'Course' => array(
+			),
+		'Course' => array(
 			'className' => 'Course',
 			'foreignKey' => 'course_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
-	);
+			)
+		);
 
 	//public $hasMany = array('AltQuestions', 'TextQuestions');
-		
-	function gerarSimulado(){
-			
-		
-
-		}
+	
+	function verificaCurso(){
+		$valor = $this->data['Exam']['Course'];
+		debug($valor['course_id']);
+		if($valor['course_id'] == '0'){
+			return false;	
+		} 
+		return true;
+	}
 
 }
