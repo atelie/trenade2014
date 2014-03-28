@@ -1,6 +1,11 @@
-
+	<?php	    
+	    $corrigir = array(
+	    'label' => 'Corrigir',
+	    'class' => 'btn btn-lg btn-primary'
+	    );
+	?>
 	<div class="wrap">
-		<?php echo $this->Session->flash(); ?>
+		<?php echo $this->Session->flash();?>
 		
 		<div class="form-group">		
 			<h1>Simulado de <?php echo $nome_curso;?></h1>
@@ -8,7 +13,12 @@
 			<?php
 				$numeroQ = 0;
 
+				$gabarito = array();
+
 				echo '<h3>Conhecimentos Gerais</h3>';
+
+				echo $this->Form->create('Exam', array(
+					'action' => 'correct', 'type' => 'post'));
 
 				foreach ($conhecimentos_gerais as $con) {	
 
@@ -29,6 +39,9 @@
 							'legend' => false,
 							'value' => false,
 						);
+
+						$gabarito[$numeroQ] = $con['AltQuestion']['answer_id'];
+
 
 						echo $this->Form->radio($con['AltQuestion']['id'], $options, $attributes);
 
@@ -57,11 +70,12 @@
 							'value' => false,
 						);
 
+						$gabarito[$numeroQ] = $alt['AltQuestion']['answer_id'];
+
 						echo $this->Form->radio($alt['AltQuestion']['id'], $options, $attributes);
 
 					echo '</div>';
 				}
-
 
 				foreach ($dissertativa as $dis) {	
 
@@ -70,13 +84,16 @@
 						$numeroQ++;
 						echo '<br><p><span style="font-weight: bold;" >'.$numeroQ.')</span> '.$pergunta = $dis['TextQuestion']['question_text'].'</p>';
 						
-						echo $this->Form->input('answer_text', array(
+						echo $this->Form->textarea('answer_text', array(
 						'label' => 'Resposta: '));
+
+						$gabarito[$numeroQ] = $dis['TextQuestion']['answer_text'];
 
 					echo '</div>';
 				}
-
 			?>
+
+			<?php echo $this->Form->end($corrigir); ?>
             
 		</div>
 	</div>

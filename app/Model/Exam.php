@@ -8,7 +8,7 @@ class Exam extends AppModel {
 				'rule' => 'verificaCurso',
 				'message' => 'Selecione um curso.'
 				)
-			)		
+			)
 		);
 
 	public $belongsTo = array(
