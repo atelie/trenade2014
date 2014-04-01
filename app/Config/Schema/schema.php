@@ -52,34 +52,7 @@ class AppSchema extends CakeSchema {
 
 	public $list_of_answers = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
-		'exam_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer1' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer2' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer3' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer4' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer5' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer6' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer7' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer8' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer9' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer10' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer11' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer12' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer13' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'answer14' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'answer15' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),        'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1)
-		),
-		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
-	);
-
-	public $exams = array(
-		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
-		'course_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-	    'question1' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'question1' => array('type' => 'integer', 'null' => true, 'default' => null),
 	    'question2' => array('type' => 'integer', 'null' => true, 'default' => null),
 	    'question3' => array('type' => 'integer', 'null' => true, 'default' => null),
 	    'question4' => array('type' => 'integer', 'null' => true, 'default' => null),
@@ -94,6 +67,34 @@ class AppSchema extends CakeSchema {
 	    'question13' => array('type' => 'integer', 'null' => true, 'default' => null),
 	    'question14' => array('type' => 'integer', 'null' => true, 'default' => null),
 	    'question15' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	    'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+		'indexes' => array(
+			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+		),
+		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+
+	public $exams = array(
+		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
+		'course_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'list_of_answer_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'answer1' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer2' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer3' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer4' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer5' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer6' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer7' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer8' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer9' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer10' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer11' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer12' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer13' => array('type' => 'integer', 'null' => true, 'default' => null),
+	    'answer14' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'answer15' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 	    'exam_date' => array('type' => 'date', 'null' => true, 'default' => null),
 		'result' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),

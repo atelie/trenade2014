@@ -1781,6 +1781,17 @@ input[type="date"] {
   margin-top: 0;
   margin-left: 10px;
 }
+
+.input.select.required {
+    padding-bottom: 9px;
+    padding-top: 19px;
+}
+
+.input.textarea.required {
+    padding-top: 10px;
+    padding-bottom: 10px;    
+}
+
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 .radio[disabled],

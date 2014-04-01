@@ -11,15 +11,12 @@
 
         }
 
-        public function correct(){
-
-        }
-
         public function generate(){
             $this->set('courses', array('[SELECIONE O CURSO]') + $this->Course->find('list'));
         }
 
         public function exam() {
+
             if ($this->request->is('post')) { 
 
                 $id_busca = $this->request->data['Exams']['course_id'];

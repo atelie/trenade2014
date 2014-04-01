@@ -9,7 +9,13 @@
 
 	<?php foreach ($users as $user): ?>
 		<tr>
+		<?php
+			if($user['Category']['name'] == "Curso"): ?>
+			<td><?php echo $user['Course']['name']; ?> </td>
+		<?php 
+			else: ?>
 			<td><?php echo $user['Category']['name']; ?> </td>
+		<?php endif; ?>
 			<td><?php echo $user['AltQuestion']['question_text']; ?></td>
 			<td><?php echo $this->Html->link(__('Editar'), array(
 				'action' => 'edit', $user['AltQuestion']['id'])) ?>
