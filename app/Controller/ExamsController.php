@@ -4,11 +4,15 @@
         public $uses = array('User', 'Exam', 'Course', 'AltQuestion', 'TextQuestion');
 
         public function index(){
-
+            
         }
 
         public function result(){
+            
+        }
 
+        public function correction(){
+             
         }
 
         public function generate(){
@@ -30,18 +34,18 @@
                     $course_name = $course['Course']['name'];
                     $this->set('nome_curso', $course_name);
 
-                    $this->set('alternativas', $this->AltQuestion->find('all', array(
-                    'fields' => array('DISTINCT id','question_text','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
-                    'conditions' => array('AltQuestion.course_id' => $id_busca), 
-                    'order' => 'rand()',
-                    'limit' => 10
-                    )));
-
                     $this->set('conhecimentos_gerais', $this->AltQuestion->find('all', array(
                     'fields' => array('DISTINCT id','question_text','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
                     'conditions' => array('AltQuestion.category_id' => '1'), 
                     'order' => 'rand()',
                     'limit' => 4
+                    )));
+
+                    $this->set('alternativas', $this->AltQuestion->find('all', array(
+                    'fields' => array('DISTINCT id','question_text','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
+                    'conditions' => array('AltQuestion.course_id' => $id_busca), 
+                    'order' => 'rand()',
+                    'limit' => 10
                     )));
 
                     $this->set('dissertativa', $this->TextQuestion->find('all', array(
