@@ -12,7 +12,19 @@
         }
 
         public function correction(){
-             
+
+            if ($this->request->is('post')) {
+
+                $questions = array();
+
+                for ($i=1;$i<=15;$i++) {
+                     $questions[$i] = $this->request->data['Exam'][$i];
+                }
+
+                for ($i=1;$i<=15;$i++) {
+                     echo $questions[$i];
+                }  
+            }
         }
 
         public function generate(){

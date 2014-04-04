@@ -12,8 +12,6 @@
 
 			<?php
 				$numeroQ = 0;
-
-				//$gabarito = array();
 				
 				echo '<h3>Conhecimentos Gerais</h3>';
 
@@ -35,12 +33,13 @@
 							'5' => ' E) '.$con['AltQuestion']['answerE']
 						);
 
-						//$gabarito[$numeroQ] = array('question'.$numeroQ => $con['AltQuestion']['id']);
-
 						$attributes = array(
 							'legend' => false,
-							'value' => false,
+							'value' => false
 						);
+
+						echo $this->Form->hidden($numeroQ, array(
+						'value' => $con['AltQuestion']['id']));
 
 						echo $this->Form->radio($con['AltQuestion']['id'], $options, $attributes);
 
@@ -69,7 +68,8 @@
 							'value' => false,
 						);
 
-						//$gabarito[$numeroQ] = array('question'.$numeroQ => $alt['AltQuestion']['id']);
+						echo $this->Form->hidden($numeroQ, array(
+						'value' => $alt['AltQuestion']['id']));
 
 						echo $this->Form->radio($alt['AltQuestion']['id'], $options, $attributes);
 
@@ -86,7 +86,8 @@
 						echo $this->Form->textarea('answer_text', array(
 						'label' => 'Resposta: '));
 
-						//$gabarito[$numeroQ] = array('question'.$numeroQ => $dis['TextQuestion']['id']);
+						echo $this->Form->hidden($numeroQ, array(
+						'value' => $dis['TextQuestion']['id']));
 
 					echo '</div>';
 				}
