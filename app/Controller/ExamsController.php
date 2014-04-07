@@ -19,30 +19,41 @@
                 for ($id=1;$id<=15;$id++) {
                     $questions[$id] = $this->request->data['Exam'][$id];
                 }
-                //Pega as respostas do usuário
+                
                 $answeredAlt = array();
-                for ($i=1;$i<=14;$i++) {
-                    $answeredAlt[$i] = $this->request->data['Exam'][$questions[$i]];
-                }
-                //Pega as respostas corretas do banco
                 $answers_list = array();
-                for($i=1;$i<=14;$i++){
+                $questoesAlt = array();
+                $score = 0;
+
+                for ($i=1;$i<=14;$i++) {
+                    
+                    $answeredAlt[$i] = $this->request->data['Exam'][$questions[$i]];
+                    
+                    $questoesAlt[$i] = $this->AltQuestion->find('first', 
+                    array('conditions' => array('AltQuestion.id' => $questions[$i])));
+                    
                     $answers_list[$i] = $this->AltQuestion->find('first', array(
                     'fields' => array('answer_id'),
                     'conditions' => array('AltQuestion.id' => $questions[$i])
                     ));
-                }
-
-                $score = 0;
-                for ($i=1;$i<=14;$i++) {
+                    
                     if($answers_list[$i]['AltQuestion']['answer_id'] == $answeredAlt[$i]){
                         $score++;
-                    }          
+                    }   
                 }
-                echo $score;
-                echo '<br>'.$dis = $this->request->data['Exam']['answer_text'];
 
-                
+                //echo $score;
+                //echo '<br>'.$dis = $this->request->data['Exam']['answer_text'];
+
+                $questoesDis = array();
+                $questoesDis[1] = $this->TextQuestion->find('first',
+                    array('conditions' => array('TextQuestion.id' => $questions[15])));
+
+                $this->set('questoesAlt', $questoesAlt);
+                $this->set('questoesDis', $questoesDis); 
+                $this->set('respostasCertas', $answers_list);
+                $this->set('respostasUsuario', $answeredAlt);    
+                $this->set('score', $score);    
             }
         }
 

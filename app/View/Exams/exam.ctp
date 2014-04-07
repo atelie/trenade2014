@@ -35,7 +35,8 @@
 
 						$attributes = array(
 							'legend' => false,
-							'value' => false
+							'value' => false,
+							'required'
 						);
 
 						echo $this->Form->hidden($numeroQ, array(
@@ -66,6 +67,7 @@
 						$attributes = array(
 							'legend' => false,
 							'value' => false,
+							'required'
 						);
 
 						echo $this->Form->hidden($numeroQ, array(
@@ -92,7 +94,11 @@
 					echo '</div>';
 				}
 			?>
+
 			<?php echo $this->Form->end($corrigir); ?>
             
 		</div>
 	</div>
+
+         
+
