@@ -99,9 +99,9 @@ function convertQuest ($respostasCertas)
 function correcao ($gabarito,$resposta){
 
 	if($gabarito == $resposta):
-	    echo "<div class='alert alert-success alert-dismissable'>   MUITO BEM ACERTOU ! </div>";
+	    echo "<div class='alert alert-success alert-dismissable'>   Resposta correta! </div>";
 	else:
-	    echo "<div class='alert alert-danger alert-dismissable'>   Você errou ! </div>";
+	    echo "<div class='alert alert-danger alert-dismissable'>   Resposta incorreta! </div>";
 	endif;
 }
 ?>

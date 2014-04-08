@@ -1,0 +1,1 @@
+<img alt="Trenade" src="img/trenade-teacher.png" class="img-responsive" style=" margin:0 auto;" >

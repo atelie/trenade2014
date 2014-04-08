@@ -1,1 +1,1 @@
-
+<img alt="Trenade" src="img/trenade-student.png" class="img-responsive" style=" margin:0 auto;" >
