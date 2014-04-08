@@ -45,14 +45,8 @@
 					convertQuest ($respostasUsuario[$numeroQ]);
 
 					correcao ($respostasCertas[$numeroQ]['AltQuestion']['answer_id'],$respostasUsuario[$numeroQ]);
-
-
-
-					echo '</div>';
-
 					
-
-
+					echo '</div>';
 				}
 
 				foreach ($questoesDis as $dis) {	
