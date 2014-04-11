@@ -21,6 +21,7 @@
 
 		public function add() {
 
+        
         $this->set('categories', array('[Selecione]') + $this->AltQuestion->Category->find('list'));
         $this->set('courses', array('[Selecione]') + $this->AltQuestion->Course->find('list'));
         $this->set('answers', array('[Selecione]') + $this->Answer->find('list'));
