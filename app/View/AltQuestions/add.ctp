@@ -35,6 +35,12 @@
 		'id' => 'question_text',
 		'class' => 'ckeditor'));
 
+    echo $this->Form->input('image', array('type' => 'file'));
+
+	if(isset($imageName)) {
+	echo $this->Html->image('/upload/'.$imageName, array('alt' => 'uploaded image'));
+	}
+
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
 		'class' => 'form-control'));
@@ -65,4 +71,8 @@
 
 	echo $this->Form->end($salvar);
 
+
+
 ?>
+
+

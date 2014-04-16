@@ -32,7 +32,7 @@
 	echo $this->Form->input('question_text', array(
 		'label' => 'Enunciado: ',
 		'id' => 'question_text',
-		'class' => 'form-control'
+		'class' => 'ckeditor'
 		));
 
 	echo $this->Form->input('answer_text', array(

@@ -4,6 +4,15 @@
 	<tr>
 		<th>Curso</th> 
 		<th>Data</th>
-		<th>Resultado</th>
+		<th>Pontuação</th>
 	</tr>
+
+	<?php foreach ($resultados as $res): ?>
+	    <tr>
+	      <td><?php echo $res['Course']['name']; ?> </td>
+	      <td><?php echo $res['Result']['data']; ?> </td>
+	      <td><?php echo $res['Result']['score']; ?></td>
+	    </tr>
+  	<?php endforeach; ?>
+
 </table>

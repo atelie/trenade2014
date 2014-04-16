@@ -1,14 +1,25 @@
 <?php
 	class ExamsController extends AppController{
 
-        public $uses = array('User', 'Exam', 'Course', 'AltQuestion', 'TextQuestion');
+        public $uses = array('User', 'Exam', 'Course', 'AltQuestion', 'TextQuestion', 'Result');
 
         public function index(){
             
         }
 
         public function result(){
-            
+            $this->Result->recursive = 0;
+            $this->set('Results', $this->paginate());
+
+            $resultados = $this->Result->find('all', 
+                    array(
+                        'conditions' => array(
+                            'Result.user_id' => $this->Auth->user('id'),
+                            ),
+                        'order' => array('Result.data asc')
+                        ));
+                
+            $this->set(compact(array('resultados')));
         }
 
         public function correction(){
@@ -42,9 +53,6 @@
                     }   
                 }
 
-                //echo $score;
-                //echo '<br>'.$dis = $this->request->data['Exam']['answer_text'];
-
                 $questoesDis = array();
                 $questoesDis[1] = $this->TextQuestion->find('first',
                     array('conditions' => array('TextQuestion.id' => $questions[15])));
@@ -53,7 +61,20 @@
                 $this->set('questoesDis', $questoesDis); 
                 $this->set('respostasCertas', $answers_list);
                 $this->set('respostasUsuario', $answeredAlt);    
-                $this->set('score', $score);    
+                $this->set('score', $score);
+
+                $this->request->data['Result']['user_id'] = $this->Auth->user('id');
+                $this->request->data['Result']['score'] = $score;
+                //$this->request->data['Result']['data'] = date("d/m/y");
+
+
+                if ($this->Result->save($this->request->data)) {
+                    $this->Session->setFlash(__('<script> alert("Resultado salvo!"); </script>', true));
+                }
+                else {
+                    $this->Session->setFlash(__('<script> alert("Erro! Resultado não foi salvo!"); </script>', true));
+                }
+                $this->request->data = null;
             }
         }
 
