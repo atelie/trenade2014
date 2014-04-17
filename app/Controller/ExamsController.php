@@ -65,7 +65,8 @@
 
                 $this->request->data['Result']['user_id'] = $this->Auth->user('id');
                 $this->request->data['Result']['score'] = $score;
-                //$this->request->data['Result']['data'] = date("d/m/y");
+                $this->request->data['Result']['data'] = date('Y-m-d');
+                $this->request->data['Result']['course_id'] = $this->data['Exam']['num_curso'];;
 
 
                 if ($this->Result->save($this->request->data)) {
@@ -117,6 +118,8 @@
                     'order' => 'rand()',
                     'limit' => 1
                     )));
+
+                    $this->set('numero_curso', $id_busca);
                 }
 
             }else {

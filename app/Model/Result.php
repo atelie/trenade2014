@@ -21,7 +21,7 @@ class Result extends AppModel{
 	public $validate = array(
 		'course_id'=> array(
 			'required' => array(
-				'rule' => 'verificaIndices',
+				'rule' => 'notEmpty',
 				'message' => 'Curso necessário.'
 				)
 			),
@@ -33,7 +33,7 @@ class Result extends AppModel{
 			),
 		'data' => array(
 			'required' => array(
-				'rule' => array('date', 'dmy', 'notEmpty'),
+				'rule' => array('date'),
 				'message' => 'Selecione uma data valida.'
 				)
 			)

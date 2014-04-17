@@ -95,7 +95,13 @@
 				}
 			?>
 
-			<?php echo $this->Form->end($corrigir); ?>
+			<?php 
+
+			echo $this->Form->hidden('num_curso', array(
+						'value' => $numero_curso));
+
+				echo $this->Form->end($corrigir);
+			?>
             
 		</div>
 	</div>
