@@ -34,13 +34,12 @@
 	echo $this->Form->input('question_text', array(
 		'label' => 'Enunciado: ',
 		'id' => 'question_text',
-		'class' => 'ckeditor'
+		'class' => 'form-control'
 		));
 	
-
 	if(isset($NomeImagem['AltQuestion']['image'])) {
 	echo $this->Html->image('/upload/'.$NomeImagem['AltQuestion']['image'], array('alt' => 'uploaded image'));
-	}
+	} 
 
     echo $this->Form->input('image', array('type' => 'file'));
 
