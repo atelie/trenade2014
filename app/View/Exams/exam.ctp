@@ -1,3 +1,6 @@
+	<script>
+		window.history.forward(1);
+	</script>
 	<?php	    
 	    $corrigir = array(
 	    'label' => 'Corrigir',

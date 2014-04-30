@@ -74,6 +74,26 @@
                 </li>
               </ul>
             </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Usuários <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Adicionar Novo Aluno'), array(
+                      'controller' => 'users', 'action' => 'add_student'));
+                    ?>
+                </li>
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Adicionar Novo Professor'), array(
+                      'controller' => 'users', 'action' => 'add_teacher'));
+                    ?>
+                </li>
+              </ul>
+            </li>
+
+            
           <?php else:  ?>
              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Simulados <b class="caret"></b></a>

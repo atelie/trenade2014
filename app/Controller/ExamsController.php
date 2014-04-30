@@ -68,11 +68,11 @@
                 $this->request->data['Result']['data'] = date('Y-m-d');
                 $this->request->data['Result']['course_id'] = $this->data['Exam']['num_curso'];;
 
-
+                $salvou = false;
                 if ($this->Result->save($this->request->data)) {
-                    $this->Session->setFlash(__('<script> alert("Resultado salvo!"); </script>', true));
+                    $salvou = true;
                 }
-                else {
+                if(!$salvou) {
                     $this->Session->setFlash(__('<script> alert("Erro! Resultado não foi salvo!"); </script>', true));
                 }
                 $this->request->data = null;

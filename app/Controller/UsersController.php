@@ -65,7 +65,19 @@
             //$this->Auth->allow('add');
         }
 
-		public function add() {
+		public function add_student() {
+        if ($this->request->is('post')) {
+            $this->User->create();
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('<script> alert("Aluno salvo com sucesso!"); </script>', true));
+                $this->redirect(array('action' => 'add'));
+            } else {
+               $this->Session->setFlash(__('<script> alert("O aluno não pode ser salvo."); </script>', true));
+            }
+        }
+    }
+
+    public function add_teacher() {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
