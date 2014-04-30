@@ -20,7 +20,7 @@
 <?php
 
 	echo $this->Form->create('AltQuestion', array(
-		'action' => 'edit'));
+		'action' => 'edit', 'type' => 'file'));
 
 
 	echo $this->Form->input('category_id', array(

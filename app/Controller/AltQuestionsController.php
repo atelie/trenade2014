@@ -85,10 +85,12 @@
 		}  
 
     public function edit($id=null) {
+
         $this->AltQuestion->id = $id;
         $this->set('categories', array('[Selecione]') + $this->AltQuestion->Category->find('list'));
         $this->set('courses', array('[Selecione]') + $this->AltQuestion->Course->find('list'));
         $this->set('answers', array('[Selecione]') + $this->Answer->find('list'));
+
 
         $this->set('NomeImagem', $this->AltQuestion->find('first', array(
                     'fields' => 'image',
@@ -102,7 +104,7 @@
             'limit' => 1
         ));
 
-        if($this->request->is('post')) {
+          if ($this->request->is('put')) {
 
                 if ($this->data['AltQuestion']['image']) {
                      
@@ -147,7 +149,8 @@
                     $this->request->data['AltQuestion']['image'] = $oldquestion['AltQuestion']['image'];
                 }
 
-                //$this->request->data['AltQuestion']['image'] = $imageName;
+                $this->request->data['AltQuestion']['image'] = $imageName;
+
             if ($this->AltQuestion->save($this->request->data)) {
                 $this->Session->setFlash(__('<script> alert("Questão editada com sucesso!"); </script>', true));
                 $this->redirect(array('action' => 'index'));
