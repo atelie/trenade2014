@@ -14,9 +14,20 @@
 	    'label' => 'Salvar',
 	    'class' => 'btn btn-lg btn-primary'
 	);
+
+	$upload = array(
+		'label' => 'Selecionar imagem...', 
+		'type' => 'file',
+		'class' => 'upload',
+		'onchange' => '$("#upload-file-info").html($(this).val());',
+        'div' => array(
+        'class' => 'fileUpload btn btn-primary'),
+        'a' => array('class' => 'btn btn-primary', 'href' => 'javascript:;')
+    ); 
 ?>
 
 <h1>Cadastro de Questões Alternativas</h1>
+
 <?php
 
 	echo $this->Form->create('AltQuestion', array(
@@ -35,8 +46,13 @@
 		'id' => 'question_text',
 		'class' => 'form-control'));
 
-    echo $this->Form->input('image', array('type' => 'file'));
-
+    echo $this->Form->input('image', $upload);
+    ?>
+	
+	<span class='label label-info' id="upload-file-info"></span>
+    
+    <?php
+	
 	if(isset($imageName)) {
 		echo $this->Html->image('/upload/'.$imageName, array('alt' => 'uploaded image'));
 	}

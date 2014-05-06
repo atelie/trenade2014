@@ -93,6 +93,18 @@
               </ul>
             </li>
 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Configurações <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Alterar Senha'), array(
+                      'controller' => 'users', 'action' => 'change_pass'));
+                    ?>
+                </li>
+              </ul>
+            </li>
+
             
           <?php else:  ?>
              <li class="dropdown">
@@ -112,6 +124,19 @@
                 </li>
               </ul>
             </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Configurações <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                    <?php
+                      echo $this->Html->link(__('Alterar Senha'), array(
+                      'controller' => 'users', 'action' => 'change_pass'));
+                    ?>
+                </li>
+              </ul>
+            </li>
+            
           <?php endif; ?>
         </ul>
 

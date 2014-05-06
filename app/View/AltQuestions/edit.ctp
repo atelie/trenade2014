@@ -14,6 +14,16 @@
 	    'class' => 'btn btn-lg btn-primary'
     );
 
+	$upload = array(
+		'label' => 'Selecionar imagem...', 
+		'type' => 'file',
+		'class' => 'upload',
+		'onchange' => '$("#upload-file-info").html($(this).val());',
+        'div' => array(
+        'class' => 'fileUpload btn btn-primary'),
+        'a' => array('class' => 'btn btn-primary', 'href' => 'javascript:;')
+    ); 
+
 ?>
 
 <h1>Editar Questões Alternativas</h1>
@@ -41,8 +51,14 @@
 	echo $this->Html->image('/upload/'.$NomeImagem['AltQuestion']['image'], array('alt' => 'uploaded image'));
 	} 
 
-    echo $this->Form->input('image', array('type' => 'file'));
+	echo '<br>';
 
+
+	echo $this->Form->input('image', $upload);
+ 
+	echo '<span class=label label-info" id="upload-file-info"></span>';
+    
+ 
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
 		'class' => 'form-control'

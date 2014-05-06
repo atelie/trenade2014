@@ -6,37 +6,37 @@
             $this->set('users', $this->paginate());
 		}
         
-        public function login(){
-            $this->layout = 'login';
-            if ($this->Auth->login()) {
-                if ($this->Auth->user('teacher')) {
-                    $this->redirect(array('controller' => 'users', 'action' => 'index'));   
-                }
-                else {
-                    $this->redirect(array('controller' => 'exams', 'action' => 'index'));
-                }
-                
+    public function login(){
+        $this->layout = 'login';
+        if ($this->Auth->login()) {
+            if ($this->Auth->user('teacher')) {
+                $this->redirect(array('controller' => 'users', 'action' => 'index'));   
             }
-            elseif (empty($this->data)) {
-                return;
-            } else {   
-                $this->Session->setFlash(__('<script> alert("Usuário ou senha inválidos."); </script>', true));
-                $this->request->data = null;
+            else {
+                $this->redirect(array('controller' => 'exams', 'action' => 'index'));
             }
+            
         }
-
-        function edit ($id){
-
-           if (empty($this->data)) {
-               $this->data = $this->User->find('first', array('conditions' => array('id' => $id)));
-               
-           }
-           else{
-                   $this->User->save($this->data);
-                   $this->redirect('manager');
-           }
-
+        elseif (empty($this->data)) {
+            return;
+        } else {   
+            $this->Session->setFlash(__('<script> alert("Usuário ou senha inválidos."); </script>', true));
+            $this->request->data = null;
         }
+    }
+
+    function edit ($id){
+
+       if (empty($this->data)) {
+           $this->data = $this->User->find('first', array('conditions' => array('id' => $id)));
+           
+       }
+       else{
+               $this->User->save($this->data);
+               $this->redirect('manager');
+       }
+
+    }
 
    public function change_pass() {
        $this->User->recursive = 0;
@@ -56,14 +56,14 @@
        $this->data = $this->User->read(null, $this->Session->read('Auth.User.id'));
    }
 
-        public function logout() {
-            $this->redirect($this->Auth->logout());
-        }
+    public function logout() {
+        $this->redirect($this->Auth->logout());
+    }
 
-        public function beforeFilter() {
-            parent::beforeFilter();
-            //$this->Auth->allow('add');
-        }
+    public function beforeFilter() {
+        parent::beforeFilter();
+        //$this->Auth->allow('add');
+    }
 
 		public function add_student() {
         if ($this->request->is('post')) {

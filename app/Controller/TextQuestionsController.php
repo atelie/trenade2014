@@ -28,6 +28,72 @@ class TextQuestionsController extends AppController {
 		$this->set('textQuestion', $this->TextQuestion->find('first', $options));
 	}
 
+
+    public function add() {
+
+        
+        $this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
+        $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
+
+            if ($this->request->is('post')) {
+
+                if ($this->data['TextQuestion']['image']) {
+                    $image = $this->data['TextQuestion']['image'];
+                    //allowed image types
+                    $imageTypes = array("image/gif", "image/jpeg", "image/png", "image/jpg");
+                    //upload folder - make sure to create one in webroot
+                    $uploadFolder = "upload";
+                    //full path to upload folder
+                    $uploadPath = WWW_ROOT . $uploadFolder;
+                   
+
+                    //check if image type fits one of allowed types
+                    foreach ($imageTypes as $type) {
+
+                        if ($type == $image['type']) {
+                          //check if there wasn't errors uploading file on serwer
+                            if ($image['error'] == 0) {
+                                 //image file name
+                                $imageName = $image['name'];
+                                $data['AltQuestion']['image'] = $imageName;
+                                //check if file exists in upload folder
+                                if (file_exists($uploadPath . '/' . $imageName)) {
+                                    //create full filename with timestamp
+                                    $imageName = date('His') . $imageName;
+                                }
+                                //create full path with image name
+                                $full_image_path = $uploadPath . '/' . $imageName;
+                                //upload image to upload folder
+                                if (move_uploaded_file($image['tmp_name'], $full_image_path)) {
+                                    $this->Session->setFlash('File saved successfully');
+                                    $this->set('imageName',$imageName);
+                                } else {
+                                    $this->Session->setFlash('There was a problem uploading file. Please try again.');
+                                }
+                            } else {
+                                $this->Session->setFlash('Error uploading file.');
+                            }
+                            break;
+                        } else {
+                            $this->Session->setFlash('Unacceptable file type');
+                        }
+                    }
+                }
+                
+                $this->request->data['TextQuestion']['user_id'] = $this->Auth->user('id');
+                $this->request->data['TextQuestion']['image'] = $imageName;
+
+                if ($this->TextQuestion->save($this->request->data)) {
+                    $this->Session->setFlash(__('<script> alert("Questão adicionada com sucesso!"); </script>', true));
+                    $this->redirect(array('action' => 'add'));
+                } else {
+                   $this->Session->setFlash(__('<script> alert("Não pode ser salvo! Verifique os campos."); </script>',true));
+                }
+            }
+
+        }  
+/*
+
 	public function add() {
 		$this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
         $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
@@ -89,7 +155,7 @@ class TextQuestionsController extends AppController {
 		}
 		
 	}
-
+*/
 	public function edit($id=null) {
         $this->TextQuestion->id = $id;
         $this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
