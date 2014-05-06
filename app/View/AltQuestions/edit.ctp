@@ -55,9 +55,12 @@
 
 
 	echo $this->Form->input('image', $upload);
- 
-	echo '<span class=label label-info" id="upload-file-info"></span>';
+
+	?>
+	
+	<span class='label label-info' id="upload-file-info"></span>
     
+    <?php    
  
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
