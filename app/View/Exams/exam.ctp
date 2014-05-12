@@ -27,7 +27,12 @@
 
 						$numeroQ++;
 						echo '<br><p><span style="font-weight: bold;" >'.$numeroQ.')</span> '.$pergunta = $con['AltQuestion']['question_text'].'</p>';
-						
+
+						if(isset($con['AltQuestion']['image'])) {
+						echo $this->Html->image('/upload/'.$con['AltQuestion']['image'], array('alt' => 'uploaded image'));
+						echo '<br><br>';
+						}
+
 						$options = array(
 							'1' => ' A) '.$con['AltQuestion']['answerA'],
 							'2' => ' B) '.$con['AltQuestion']['answerB'],
@@ -58,6 +63,11 @@
 
 						$numeroQ++;
 						echo '<br><p><span style="font-weight: bold;" >'.$numeroQ.')</span> '.$pergunta = $alt['AltQuestion']['question_text'].'</p>';
+
+						if(isset($alt['AltQuestion']['image'])) {
+						echo $this->Html->image('/upload/'.$alt['AltQuestion']['image'], array('alt' => 'uploaded image'));
+						echo '<br><br>';
+						}
 						
 						$options = array(
 							'1' => ' A) '.$alt['AltQuestion']['answerA'],
@@ -87,6 +97,11 @@
 
 						$numeroQ++;
 						echo '<br><p><span style="font-weight: bold;" >'.$numeroQ.')</span> '.$pergunta = $dis['TextQuestion']['question_text'].'</p>';
+
+						if(isset($dis['TextQuestion']['image'])) {
+						echo $this->Html->image('/upload/'.$alt['TextQuestion']['image'], array('alt' => 'uploaded image'));
+						echo '<br><br>';
+						}
 						
 						echo $this->Form->textarea('answer_text', array(
 						'label' => 'Resposta: '));

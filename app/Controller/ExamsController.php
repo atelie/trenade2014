@@ -99,21 +99,21 @@
                     $this->set('nome_curso', $course_name);
 
                     $this->set('conhecimentos_gerais', $this->AltQuestion->find('all', array(
-                    'fields' => array('DISTINCT id','question_text','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
+                    'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
                     'conditions' => array('AltQuestion.category_id' => '1'), 
                     'order' => 'rand()',
                     'limit' => 4
                     )));
 
                     $this->set('alternativas', $this->AltQuestion->find('all', array(
-                    'fields' => array('DISTINCT id','question_text','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
+                    'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
                     'conditions' => array('AltQuestion.course_id' => $id_busca), 
                     'order' => 'rand()',
                     'limit' => 10
                     )));
 
                     $this->set('dissertativa', $this->TextQuestion->find('all', array(
-                    'fields' => array('DISTINCT id','question_text','answer_text'),
+                    'fields' => array('DISTINCT id','question_text','image','answer_text'),
                     'conditions' => array('TextQuestion.course_id' => $id_busca), 
                     'order' => 'rand()',
                     'limit' => 1
