@@ -15,7 +15,7 @@
 		'class' => 'form-control'));
 	
 	echo $this->Form->input('username', array(
-		'label' => 'Registro do Professor: ', 
+		'label' => 'Registro do Professor (mínimo 6 dígitos): ', 
 		'class' => 'form-control'));
 	
 	echo $this->Form->input('email', array(

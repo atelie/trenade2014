@@ -65,29 +65,40 @@
         //$this->Auth->allow('add');
     }
 
-		public function add_student() {
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('<script> alert("Aluno salvo com sucesso!"); </script>', true));
-                $this->redirect(array('action' => 'add'));
-            } else {
-               $this->Session->setFlash(__('<script> alert("O aluno não pode ser salvo."); </script>', true));
-            }
+    public function add_student() {
+      if ($this->request->is('post')) {
+        if($this->User->find('first', array('conditions' => array('username' => $this->request->data['User']['username']))) == null){
+          $this->User->create();
+          if ($this->User->save($this->request->data)) {
+              $this->Session->setFlash(__('<script> alert("Aluno salvo com sucesso!"); </script>', true));
+              $this->redirect(array('action' => 'add_student'));
+          } 
+          else {
+             $this->Session->setFlash(__('<script> alert("O aluno não pode ser salvo."); </script>', true));
+          }
         }
+        else {
+          $this->Session->setFlash(__('<script> alert("Usuário não pode ser salvo! O RA já existe."); </script>', true));
+        }
+      }
     }
 
     public function add_teacher() {
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('<script> alert("Usuário salvo com sucesso!"); </script>', true));
-                $this->redirect(array('action' => 'add'));
-            } else {
-               $this->Session->setFlash(__('<script> alert("O usuário não pode ser salvo."); </script>', true));
-            }
+      if ($this->request->is('post')) {
+        if($this->User->find('first', array('conditions' => array('username' => $this->request->data['User']['username']))) == null){
+          $this->User->create();
+          if ($this->User->save($this->request->data)) {
+              $this->Session->setFlash(__('<script> alert("Usuário salvo com sucesso!"); </script>', true));
+              $this->redirect(array('action' => 'add_teacher'));
+          } 
+          else {
+             $this->Session->setFlash(__('<script> alert("O usuário não pode ser salvo."); </script>', true));
+          }
+        } 
+        else {
+          $this->Session->setFlash(__('<script> alert("Usuário não pode ser salvo! O Registro de Professor já existe."); </script>', true));
         }
+      }
     }
-
 	}
 ?>

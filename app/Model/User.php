@@ -15,8 +15,7 @@
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o nome!'
-	       		),
-	       		'alphaNumeric'
+	       		)
 	    	),
 
 	    	'email' => array(
