@@ -113,7 +113,7 @@ class TextQuestionsController extends AppController {
             'limit' => 1
         ));
 
-          if ($this->request->is('put')) {
+            if ($this->request->is('put')) {
 
                 if ($this->data['TextQuestion']['image']) {
                      
@@ -152,10 +152,15 @@ class TextQuestionsController extends AppController {
                             break;
                         
                     }
-
-                } 
+                }
+                /*
                 else {
                     $this->request->data['TextQuestion']['image'] = $oldquestion['TextQuestion']['image'];
+                }
+                */
+
+                if($imageName == null){
+                    $imageName = $oldquestion['TextQuestion']['image'];
                 }
 
                 $this->request->data['TextQuestion']['image'] = $imageName;

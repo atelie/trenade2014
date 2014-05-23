@@ -145,8 +145,14 @@
                     }
 
                 } 
+                /*
                 else {
                     $this->request->data['AltQuestion']['image'] = $oldquestion['AltQuestion']['image'];
+                }
+                */
+
+                if($imageName == null){
+                    $imageName = $oldquestion['AltQuestion']['image'];
                 }
 
                 $this->request->data['AltQuestion']['image'] = $imageName;

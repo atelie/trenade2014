@@ -28,12 +28,12 @@ App::uses('Controller', 'Controller');
  * Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @package     app.Controller
+ * @link        http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
 
-	public $components = array(
+    public $components = array(
         'Session',
         'Auth' => array(
             'loginRedirect' => array(
@@ -47,12 +47,12 @@ class AppController extends Controller {
         );
 
     var $permissoesAluno = array(
-        'users' => array('logout' => true, 'change_pass' => true),
-        'exams' => array('index' => true,'exam' => true, 'generate' => true, 'result' => true, 'correction' => true)
+        'users' => array('logout' => true, /*'change_pass' => true*/),
+        'exams' => array('index' => true,/*'exam' => true, 'generate' => true, 'result' => true, 'correction' => true*/)
         );
 
     var $permissoesProfessor = array(
-        'users' => array('logout' => true, 'index' => true, 'add_student' => true, 'add_teacher' => true, 'change_pass' => true),
+        'users' => array('logout' => true, 'index' => true, /*'add_student' => true, 'add_teacher' => true, 'change_pass' => true*/),
         'alt_questions' => array('index' => true,'add' => true,'edit' => true,'delete' => true),
         'text_questions' => array('index' => true,'view' => true,'add' => true,'edit' => true,'delete' => true),
         'courses' => array('index' => true, 'add' => true),
