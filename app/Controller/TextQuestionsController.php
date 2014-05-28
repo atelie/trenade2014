@@ -30,7 +30,8 @@ class TextQuestionsController extends AppController {
 
 
     public function add() {
-
+        
+        $imageName = null;
         
         $this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
         $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
@@ -100,6 +101,7 @@ class TextQuestionsController extends AppController {
         $this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
         $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
 
+        $imageName = null;
 
         $this->set('NomeImagem', $this->TextQuestion->find('first', array(
                     'fields' => 'image',

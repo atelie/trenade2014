@@ -26,6 +26,9 @@
         $this->set('courses', array('[Selecione]') + $this->AltQuestion->Course->find('list'));
         $this->set('answers', array('[Selecione]') + $this->Answer->find('list'));
 
+        $imageName = null;
+
+
 			if ($this->request->is('post')) {
 
                 if ($this->data['AltQuestion']['image']) {
@@ -91,6 +94,7 @@
         $this->set('courses', array('[Selecione]') + $this->AltQuestion->Course->find('list'));
         $this->set('answers', array('[Selecione]') + $this->Answer->find('list'));
 
+        $imageName = null;
 
         $this->set('NomeImagem', $this->AltQuestion->find('first', array(
                     'fields' => 'image',

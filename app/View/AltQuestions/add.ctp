@@ -52,11 +52,11 @@
 	<span class='label label-info' id="upload-file-info"></span>
     
     <?php
-	
+	/*
 	if(isset($imageName)) {
 		echo $this->Html->image('/upload/'.$imageName, array('alt' => 'uploaded image'));
 	}
-
+	*/
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
 		'class' => 'form-control'));
