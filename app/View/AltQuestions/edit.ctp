@@ -61,12 +61,6 @@
 	<span class='label label-info' id="upload-file-info"></span>
     
     <?php
-
-    $removerImagem = true;
-
-	echo $this->Form->input('removerImagem', array(
-							'label' => 'Marque esta opção caso queira remover a imagem atual.',
-                            'type'=>'checkbox'));
  
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
@@ -96,10 +90,6 @@
 	echo $this->Form->input('answer_id', array(
 		'label' => 'Resposta correta: ',
 		'class' => 'form-control'));
-
-	if($removerImagem) {
-		$this->Form->input('image', null);
-	}
 
 	echo $this->Form->end($salvar);
 
