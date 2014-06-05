@@ -78,8 +78,8 @@
                 $this->request->data['AltQuestion']['image'] = $imageName;
 
                 if ($this->AltQuestion->save($this->request->data)) {
-                    $this->Session->setFlash(__('<script> alert("Questão adicionada com sucesso!"); </script>', true));
-                    $this->redirect(array('action' => 'add'));
+                    $this->Session->setFlash(__('<script> alert("Questão adicionada com sucesso! Para adicioná-la para outro curso, escolha outro e clique em Salvar novamente."); </script>', true));
+                    //$this->redirect(array('action' => 'add'));
                 } else {
                    $this->Session->setFlash(__('<script> alert("Não pode ser salvo! Verifique os campos."); </script>',true));
                 }
