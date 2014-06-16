@@ -69,6 +69,7 @@
       if ($this->request->is('post')) {
         if($this->User->find('first', array('conditions' => array('username' => $this->request->data['User']['username']))) == null){
           $this->User->create();
+          $this->request->data['User']['teacher'] = 0;
           if ($this->User->save($this->request->data)) {
               $this->Session->setFlash(__('<script> alert("Aluno salvo com sucesso!"); </script>', true));
               $this->redirect(array('action' => 'add_student'));
@@ -87,6 +88,7 @@
       if ($this->request->is('post')) {
         if($this->User->find('first', array('conditions' => array('username' => $this->request->data['User']['username']))) == null){
           $this->User->create();
+          $this->request->data['User']['teacher'] = 1;
           if ($this->User->save($this->request->data)) {
               $this->Session->setFlash(__('<script> alert("Usuário salvo com sucesso!"); </script>', true));
               $this->redirect(array('action' => 'add_teacher'));
