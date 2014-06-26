@@ -18,7 +18,7 @@
 		'label' => 'Selecionar imagem...', 
 		'type' => 'file',
 		'class' => 'upload',
-		'onchange' => '$("#upload-file-info").html($(this).val());',
+		'id' =>'files',
         'div' => array(
         'class' => 'fileUpload btn btn-primary'),
         'a' => array('class' => 'btn btn-primary', 'href' => 'javascript:;')
@@ -47,21 +47,59 @@
 		'class' => 'form-control'
 		));
 	
-	if(isset($NomeImagem['AltQuestion']['image'])) {
-	echo $this->Html->image('/upload/'.$NomeImagem['AltQuestion']['image'], array('alt' => 'uploaded image'));
-	} 
 
-	echo '<br>';
+	echo '<br><br>';
 
 
-	echo $this->Form->input('image', $upload);
+	//echo $this->Form->input('image', $upload);
 
 	?>
 	
-	<span class='label label-info' id="upload-file-info"></span>
-    
+	<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                        
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+									
+									<?php 
+										if(isset($NomeImagem['AltQuestion']['image'])) {
+											echo $this->Html->image('/upload/'.$NomeImagem['AltQuestion']['image'], array('id' => 'imagemBd'));
+											} 
+									?>
+
+									<span class='label' id="imagemQuestao"></span>
+
+                                    <div class="caption text-center">
+                                        <div class="btn btn-primary btn-file">
+                                           <?php echo $this->Form->input('image', $upload); ?>
+                                        </div>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+	
+	
+	<button type="button" class="btn btn-danger" onclick="SetaNullImagemVazia();" >Excluir imagem</button>
+
+
+	<input type="hidden" name="imagemvazia" value="" id="imagemvazia">
+	<br> 
     <?php
- 
+
+	echo $this->Form->input('imagemvazia', array(
+		'label' => 'Excluir imagem',
+		'class' => 'form-control',
+		'type' => 'checkbox',
+		'onclick' => 'verificaChecks();'
+	));
+	
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
 		'class' => 'form-control'

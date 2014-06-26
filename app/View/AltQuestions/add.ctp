@@ -19,7 +19,7 @@
 		'label' => 'Selecionar imagem...', 
 		'type' => 'file',
 		'class' => 'upload',
-		'onchange' => '$("#upload-file-info").html($(this).val());',
+		'id' =>'files',
         'div' => array(
         'class' => 'fileUpload btn btn-primary'),
         'a' => array('class' => 'btn btn-primary', 'href' => 'javascript:;')
@@ -49,14 +49,13 @@
     echo $this->Form->input('image', $upload);
     ?>
 	
-	<span class='label label-info' id="upload-file-info"></span>
-    
+	<span class='label' id="imagemQuestao"></span>
+	
+
+   	<button type="button" class="btn btn-danger" onclick="validaimg();" >Excluir imagem</button>
+
     <?php
-	/*
-	if(isset($imageName)) {
-		echo $this->Html->image('/upload/'.$imageName, array('alt' => 'uploaded image'));
-	}
-	*/
+
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
 		'class' => 'form-control'));

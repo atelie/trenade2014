@@ -162,10 +162,14 @@
                 }
                 */
 
-                if($imageName == null){
+              if($imageName == null){
                     $imageName = $oldquestion['AltQuestion']['image'];
                 }
-
+             
+              if($this->request->data['imagemvazia'] == 'vazio'){
+                    $imageName = null;
+                }
+              
                 $this->request->data['AltQuestion']['image'] = $imageName;
 
             if ($this->AltQuestion->save($this->request->data)) {
