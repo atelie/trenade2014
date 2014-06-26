@@ -50,17 +50,9 @@
 
 	echo '<br><br>';
 
-
-	//echo $this->Form->input('image', $upload);
-
 	?>
 	
-	<div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="form-group">
-                        
-                        <div class="row">
-                            <div class="col-sm-4 col-md-4 col-lg-3">
+	
                                 <div class="thumbnail">
 									
 									<?php 
@@ -78,12 +70,6 @@
                                      
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 	
 	
 	<button type="button" class="btn btn-danger" onclick="SetaNullImagemVazia();" >Excluir imagem</button>
@@ -91,15 +77,9 @@
 
 	<input type="hidden" name="imagemvazia" value="" id="imagemvazia">
 	<br> 
+
     <?php
 
-	echo $this->Form->input('imagemvazia', array(
-		'label' => 'Excluir imagem',
-		'class' => 'form-control',
-		'type' => 'checkbox',
-		'onclick' => 'verificaChecks();'
-	));
-	
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
 		'class' => 'form-control'

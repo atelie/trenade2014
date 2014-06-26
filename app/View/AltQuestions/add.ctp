@@ -46,11 +46,21 @@
 		'id' => 'question_text',
 		'class' => 'form-control'));
 
-    echo $this->Form->input('image', $upload);
     ?>
-	
-	<span class='label' id="imagemQuestao"></span>
-	
+
+
+	<div class="thumbnail">
+		
+		<span class='label' id="imagemQuestao"></span>
+
+	    <div class="caption text-center">
+	        <div class="btn btn-primary btn-file">
+	           <?php echo $this->Form->input('image', $upload); ?>
+	        </div>
+	     
+	    </div>
+	</div>
+
 
    	<button type="button" class="btn btn-danger" onclick="validaimg();" >Excluir imagem</button>
 
