@@ -173,10 +173,7 @@
     <?php 
 
     echo $this->Html->script('jquery-1.10.2.js');
-    echo $this->Html->script('jquery-1.8.0.js');
-    echo $this->Html->script('jquery.validate.js');
-    echo $this->Html->script('ckeditor/ckeditor.js');
-    echo $this->Html->script('ckeditor/adapters/jquery.js"');
+    echo $this->Html->script('jquery.validate.min.js');
     echo $this->Html->script('bootstrap.js');
     echo $this->Html->script('tablesorter/jquery.tablesorter.js');
     echo $this->Html->script('tablesorter/tables.js');

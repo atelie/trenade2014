@@ -1,5 +1,4 @@
-
- <?php 
+<?php 
  
  	$input_course = array(
 		'label' => 'Curso: ', 
@@ -31,7 +30,7 @@
 <?php
 
 	echo $this->Form->create('AltQuestion', array(
-		'action' => 'add', 'type' => 'file'));
+		'action' => 'add', 'type' => 'file', 'id'=>'AltQuestionAddForm' ));
 	
 	echo $this->Form->input('category_id', array(
 		'label' => 'Categoria: ', 
@@ -68,6 +67,7 @@
 
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): ',
+		'id' => 'answerA', 
 		'class' => 'form-control'));
 
 	echo $this->Form->input('answerB', array(

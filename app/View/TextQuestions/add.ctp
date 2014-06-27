@@ -10,8 +10,8 @@
     ));
 
 	$salvar = array(
-    'label' => 'Salvar',
-    'class' => 'btn btn-lg btn-primary'
+	    'label' => 'Salvar',
+	    'class' => 'btn btn-lg btn-primary'
     );
 
     $upload = array(
@@ -30,7 +30,7 @@
 	<?php
 
 		echo $this->Form->create('TextQuestion', array(
-		'action' => 'add', 'type' => 'file'));
+		'action' => 'add', 'type' => 'file', 'id'=>'TextQuestionAddForm'));
 	
 		echo $this->Form->input('category_id', array(
 			'label' => 'Categoria: ', 

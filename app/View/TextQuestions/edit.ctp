@@ -28,7 +28,7 @@
 <?php
 
 	echo $this->Form->create('TextQuestion', array(
-		'action' => 'edit', 'type' => 'file'));
+		'action' => 'edit', 'type' => 'file', 'id'=>'TextQuestionAddForm'));
 
 
 	echo $this->Form->input('category_id', array(

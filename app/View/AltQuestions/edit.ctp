@@ -30,7 +30,7 @@
 <?php
 
 	echo $this->Form->create('AltQuestion', array(
-		'action' => 'edit', 'type' => 'file'));
+		'action' => 'edit', 'type' => 'file', 'id'=>'AltQuestionAddForm'));
 
 
 	echo $this->Form->input('category_id', array(
@@ -53,23 +53,23 @@
 	?>
 	
 	
-                                <div class="thumbnail">
-									
-									<?php 
-										if(isset($NomeImagem['AltQuestion']['image'])) {
-											echo $this->Html->image('/upload/'.$NomeImagem['AltQuestion']['image'], array('id' => 'imagemBd'));
-											} 
-									?>
+    <div class="thumbnail">
+		
+		<?php 
+			if(isset($NomeImagem['AltQuestion']['image'])) {
+				echo $this->Html->image('/upload/'.$NomeImagem['AltQuestion']['image'], array('id' => 'imagemBd'));
+				} 
+		?>
 
-									<span class='label' id="imagemQuestao"></span>
+		<span class='label' id="imagemQuestao"></span>
 
-                                    <div class="caption text-center">
-                                        <div class="btn btn-primary btn-file">
-                                           <?php echo $this->Form->input('image', $upload); ?>
-                                        </div>
-                                     
-                                    </div>
-                                </div>
+        <div class="caption text-center">
+            <div class="btn btn-primary btn-file">
+               <?php echo $this->Form->input('image', $upload); ?>
+            </div>
+         
+        </div>
+    </div>
 	
 	
 	<button type="button" class="btn btn-danger" onclick="SetaNullImagemVazia();" >Excluir imagem</button>
