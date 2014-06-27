@@ -1,33 +1,33 @@
 <?php 
- 
- 	$input_course = array(
-		'label' => 'Curso: ', 
-		'disabled',
-		'id' => 'course_id',
-		'class' => 'form-control',
-        'div' => array(
-        'class' => 'input_course',
-    ));
 
-	$salvar = array(
-	    'label' => 'Salvar',
-	    'class' => 'btn btn-lg btn-primary'
+$input_course = array(
+	'label' => 'Curso: ', 
+	'disabled',
+	'id' => 'course_id',
+	'class' => 'form-control',
+	'div' => array(
+		'class' => 'input_course',
+		));
+
+$salvar = array(
+	'label' => 'Salvar',
+	'class' => 'btn btn-lg btn-primary'
 	);
 
-	$upload = array(
-		'label' => 'Selecionar imagem...', 
-		'type' => 'file',
-		'class' => 'upload',
-		'id' =>'files',
-        'div' => array(
-        'class' => 'fileUpload btn btn-primary'),
-        'a' => array('class' => 'btn btn-primary', 'href' => 'javascript:;')
-    ); 
-?>
+$upload = array(
+	'label' => 'Selecionar imagem...', 
+	'type' => 'file',
+	'class' => 'upload',
+	'id' =>'files',
+	'div' => array(
+		'class' => 'fileUpload btn btn-primary'),
+	'a' => array('class' => 'btn btn-primary', 'href' => 'javascript:;')
+	); 
+	?>
 
-<h1>Cadastro de Questões Alternativas</h1>
+	<h1>Cadastro de Questões Alternativas</h1>
 
-<?php
+	<?php
 
 	echo $this->Form->create('AltQuestion', array(
 		'action' => 'add', 'type' => 'file', 'id'=>'AltQuestionAddForm' ));
@@ -45,57 +45,57 @@
 		'id' => 'question_text',
 		'class' => 'form-control'));
 
-    ?>
+		?>
 
 
-	<div class="thumbnail">
-		
-		<span class='label' id="imagemQuestao"></span>
+		<div class="thumbnail">
+			
+			<span class='label' id="imagemQuestao"></span>
 
-	    <div class="caption text-center">
-	        <div class="btn btn-primary btn-file">
-	           <?php echo $this->Form->input('image', $upload); ?>
-	        </div>
-	     
-	    </div>
-	</div>
+			<div class="caption text-center">
+				<div class="btn btn-primary btn-file">
+					<?php echo $this->Form->input('image', $upload); ?>
+				</div>
+				
+			</div>
+		</div>
 
 
-   	<button type="button" class="btn btn-danger" onclick="validaimg();" >Excluir imagem</button>
+		<button type="button" class="btn btn-danger" onclick="validaimg();" >Excluir imagem</button>
 
-    <?php
+		<?php
 
-	echo $this->Form->input('answerA', array(
-		'label' => 'A): ',
+		echo $this->Form->input('answerA', array(
+			'label' => 'A): ',
 		'id' => 'answerA', 
 		'class' => 'form-control'));
 
-	echo $this->Form->input('answerB', array(
-		'label' => 'B): ',
+		echo $this->Form->input('answerB', array(
+			'label' => 'B): ',
 		'class' => 'form-control'
 		));
 
-	echo $this->Form->input('answerC', array(
-		'label' => 'C): ',
+		echo $this->Form->input('answerC', array(
+			'label' => 'C): ',
 		'class' => 'form-control'
 		));
 
-	echo $this->Form->input('answerD', array(
-		'label' => 'D): ',
+		echo $this->Form->input('answerD', array(
+			'label' => 'D): ',
 		'class' => 'form-control'
 		));
 
-	echo $this->Form->input('answerE', array(
-		'label' => 'E): ',
+		echo $this->Form->input('answerE', array(
+			'label' => 'E): ',
 		'class' => 'form-control'
 		));
 
-	echo $this->Form->input('answer_id', array(
-		'label' => 'Resposta correta: ',
-		'class' => 'form-control'));
+		echo $this->Form->input('answer_id', array(
+			'label' => 'Resposta correta: ',
+			'class' => 'form-control'));
 
-	echo $this->Form->end($salvar);
+		echo $this->Form->end($salvar);
 
-?>
+		?>
 
 

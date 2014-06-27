@@ -103,8 +103,7 @@ function validaimg(){
 
 		$("#files").removeAttr('value');
 		$("#imagemVisualiza").attr("src", $("#files").val());
-
-
+		$("#imagemVisualiza").removeAttr("src");
 }
 
 function SetaNullImagemVazia(){
