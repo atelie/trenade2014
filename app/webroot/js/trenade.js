@@ -86,7 +86,6 @@ $(document).ready(function(){
 });
 
 
-
 function check(){
 
 	if (category_id.selectedIndex==2) {
