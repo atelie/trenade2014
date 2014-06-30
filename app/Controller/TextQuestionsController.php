@@ -171,7 +171,11 @@ class TextQuestionsController extends AppController {
                 if($imageName == null){
                     $imageName = $oldquestion['TextQuestion']['image'];
                 }
-
+             
+                if($this->request->data['imagemvazia'] == 'vazio'){
+                    $imageName = null;
+                }
+              
                 $this->request->data['TextQuestion']['image'] = $imageName;
 
             if ($this->TextQuestion->save($this->request->data)) {

@@ -45,10 +45,6 @@
 		'class' => 'form-control'
 		));
 
-	if(isset($NomeImagem['TextQuestion']['image'])) {
-	echo $this->Html->image('/upload/'.$NomeImagem['TextQuestion']['image'], array('alt' => 'uploaded image'));
-	} 
-
 	echo '<br><br>';
 
 
@@ -59,8 +55,8 @@
 	<div class="thumbnail">
 		
 		<?php 
-			if(isset($NomeImagem['AltQuestion']['image'])) {
-				echo $this->Html->image('/upload/'.$NomeImagem['AltQuestion']['image'], array('id' => 'imagemBd'));
+			if(isset($NomeImagem['TextQuestion']['image'])) {
+				echo $this->Html->image('/upload/'.$NomeImagem['TextQuestion']['image'], array('id' => 'imagemBd'));
 				} 
 		?>
 
@@ -79,7 +75,7 @@
 
 
 	<input type="hidden" name="imagemvazia" value="" id="imagemvazia">
-	<br> 
+	<br>  
     
     <?php  
 	

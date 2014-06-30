@@ -100,15 +100,22 @@ function check(){
 
 function validaimg(){
 
-		$("#files").removeAttr('value');
+		$("#files").val(null);
+		//$("#files").removeAttr('value');
 		$("#imagemVisualiza").attr("src", $("#files").val());
 		$("#imagemVisualiza").removeAttr("src");
+
 }
 
 function SetaNullImagemVazia(){
         $("#imagemvazia").val("vazio");
-		$("#files").removeAttr('value');
+
+		$("#files").val(null);	
+		//$("#files").removeAttr('value');
+		
 		$("#imagemVisualiza").attr("src", $("#files").val());
+		$("#imagemVisualiza").removeAttr("src"); 
+
 		$("#imagemBd").attr("src", $("#files").val());		
 }
 
