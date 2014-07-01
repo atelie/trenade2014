@@ -1,10 +1,49 @@
 <?php
 	class UsersController extends AppController{
+
+    public $uses = array('User', 'Result');
         
 		public function index(){
             $this->User->recursive = 0;
             $this->set('users', $this->paginate());
 		}
+
+    public function performance(){
+        
+    }
+
+    public function student_performance(){
+        
+        $recuperaId = $this->User->find('first', 
+                array(
+                  'conditions' => array(
+                      'User.username' => $this->request->data['Users']['username'],
+                      )
+                  ));
+
+        $this->Result->recursive = 0;
+        $this->set('Results', $this->paginate());
+
+        if($recuperaId['User']['id'] != null){
+
+          $resultados = $this->Result->find('all', 
+                array(
+                    'conditions' => array(
+                        'Result.user_id' => $recuperaId['User']['id']
+                        ),
+                    'order' => array('Result.data asc')
+                    ));
+            
+          $this->set(compact(array('resultados')));
+
+        }
+        else{
+          $this->Session->setFlash(__('
+                        <script> alert("Aluno não encontrado!"); </script>', true));
+          $this->redirect(array('action' => 'performance'));
+
+        }
+    }
         
     public function login(){
         $this->layout = 'login';

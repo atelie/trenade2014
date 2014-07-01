@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"></a>
+        <a class="navbar-brand" href="#"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,18 +40,34 @@
           <?php if($ehProfessor): ?>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Questões Alternativas <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-check-square-o"></i> Questões Alternativas <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
                     <?php
-                      echo $this->Html->link(__('Adicionar'), array(
-                      'controller' => 'alt_questions', 'action' => 'add'));
+                      echo $this->Html->link(
+                         '<i class="fa fa-plus"></i> Adicionar',
+                          array(
+                              'controller'=>'alt_questions',
+                              'action'=>'add',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
                     ?>
                 </li>
                 <li>
                     <?php
-                      echo $this->Html->link(__('Gerenciar'), array(
-                      'controller' => 'alt_questions', 'action' => 'index'));
+                      echo $this->Html->link(
+                         '<i class="fa fa-wrench"></i> Gerenciar',
+                          array(
+                              'controller'=>'alt_questions',
+                              'action'=>'index',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
                     ?>
                 </li>
               </ul>
@@ -62,44 +78,99 @@
               <ul class="dropdown-menu">
                 <li>
                     <?php
-                      echo $this->Html->link(__('Adicionar'), array(
-                      'controller' => 'text_questions', 'action' => 'add'));
+                      echo $this->Html->link(
+                         '<i class="fa fa-plus"></i> Adicionar',
+                          array(
+                              'controller'=>'text_questions',
+                              'action'=>'add',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
                     ?>
                 </li>
                 <li>
                     <?php
-                      echo $this->Html->link(__('Gerenciar'), array(
-                      'controller' => 'text_questions', 'action' => 'index'));
+                      echo $this->Html->link(
+                         '<i class="fa fa-wrench"></i> Gerenciar',
+                          array(
+                              'controller'=>'text_questions',
+                              'action'=>'index',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
                     ?>
                 </li>
               </ul>
             </li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Usuários <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-group"></i> Usuários <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
+
                     <?php
-                      echo $this->Html->link(__('Adicionar Novo Aluno'), array(
-                      'controller' => 'users', 'action' => 'add_student'));
+                      echo $this->Html->link(
+                         '<i class="fa fa-plus"></i> Adicionar Novo Aluno',
+                          array(
+                              'controller'=>'users',
+                              'action'=>'add_student',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
                     ?>
                 </li>
                 <li>
-                    <?php
-                      echo $this->Html->link(__('Adicionar Novo Professor'), array(
-                      'controller' => 'users', 'action' => 'add_teacher'));
+                  <?php
+                      echo $this->Html->link(
+                         '<i class="fa fa-plus"></i> Adicionar Novo Professor',
+                          array(
+                              'controller'=>'users',
+                              'action'=>'add_teacher',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
+                    ?>
+                </li>
+                <li> 
+                   <?php
+                      echo $this->Html->link(
+                         '<i class="fa fa-dashboard"></i> Verificar Desempenho',
+                          array(
+                              'controller'=>'users',
+                              'action'=>'performance',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
                     ?>
                 </li>
               </ul>
             </li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Configurações <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gears"></i> Configurações <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
-                    <?php
-                      echo $this->Html->link(__('Alterar Senha'), array(
-                      'controller' => 'users', 'action' => 'change_pass'));
+                 <?php
+                      echo $this->Html->link(
+                         '<i class="fa fa-key"></i> Alterar Senha',
+                          array(
+                              'controller'=>'users',
+                              'action'=>'change_pass',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
                     ?>
                 </li>
               </ul>
