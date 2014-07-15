@@ -57,7 +57,9 @@ class AppController extends Controller {
         'text_questions' => array('index' => true,'view' => true,'add' => true,'edit' => true,'delete' => true),
         'courses' => array('index' => true, 'add' => true),
         'categories' => array('index' => true, 'add' => true),
-        'answers' => array('index' => true, 'add' => true)
+        'answers' => array('index' => true, 'add' => true),
+        'exams' => array('number' => true, 'count' => true)
+
         );
 
     

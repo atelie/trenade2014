@@ -126,6 +126,57 @@
                 $this->redirect(array('action' => 'generate'));
             }
 
-        } 
+        }
+
+        public function number(){
+            $this->set('courses', array('[SELECIONE O CURSO]') + $this->Course->find('list'));
+        }
+
+        public function count() {
+
+
+            if ($this->request->is('post')) { 
+
+                $id_busca = $this->request->data['Exams']['course_id'];
+
+                if ($id_busca == '0') {
+                    $this->Session->setFlash(__('<script> alert("Selecione o curso!"); </script>',true));
+                    $this->redirect(array('action' => 'generate'));
+                } else {
+                    $course = $this->Course->find('first', 
+                    array( 'conditions' => array('Course.id' => $id_busca)));
+                    $course_name = $course['Course']['name'];
+                    $this->set('nome_curso', $course_name);
+
+                    $this->set('conhecimentos_gerais', $this->AltQuestion->find('count', array(
+                    'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
+                    'conditions' => array('AltQuestion.category_id' => '1'), 
+                    'order' => 'rand()',
+                    'limit' => 4
+                    )));
+
+                    $this->set('alternativas', $this->AltQuestion->find('count', array(
+                    'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
+                    'conditions' => array('AltQuestion.course_id' => $id_busca), 
+                    'order' => 'rand()',
+                    'limit' => 10
+                    )));
+
+                    $this->set('dissertativa', $this->TextQuestion->find('count', array(
+                    'fields' => array('DISTINCT id','question_text','image','answer_text'),
+                    'conditions' => array('TextQuestion.course_id' => $id_busca), 
+                    'order' => 'rand()',
+                    'limit' => 1
+                    )));
+
+
+                    $this->set('numero_curso', $id_busca);
+                }
+
+            }else {
+                $this->redirect(array('action' => 'generate'));
+            }
+
+        }
 
     }

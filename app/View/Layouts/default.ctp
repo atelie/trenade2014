@@ -173,6 +173,20 @@
                       );
                     ?>
                 </li>
+                <li>
+                 <?php
+                      echo $this->Html->link(
+                         '<i class="fa fa-info"></i> Total Questões',
+                          array(
+                              'controller'=>'exams',
+                              'action'=>'number',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
+                    ?>
+                </li>
               </ul>
             </li>
 
@@ -217,7 +231,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo($nomeUser); ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li>
-                <?php echo $this->Html->link(__('Logout'), array(
+                <?php echo $this->Html->link(__('Sair'), array(
                   'controller' => 'users', 
                   'action' => 'logout'
                   ));?>

@@ -3,18 +3,19 @@
 
 	$continuar = array(
 		'label' => 'Continuar',
-		'class' => 'btn btn-primary'
+		'class' => 'btn btn-primary',
+		'style' => 'margin-top: 6px'
 	);
 
 	?>
 
 
-	<div class="wrap">
 		<?php echo $this->Session->flash(); ?>
 
-		<div align="center" class="form-sumilado">			
+		<div align="center">			
 			<h1>Verificar Desempenho de Aluno</h1>
 			
+			<div class="form-sumilado">
 			<?php
 
 			echo $this->Form->create('Users', array('action' => 'student_performance'));
@@ -25,5 +26,5 @@
 			
 			echo $this->Form->end($continuar);
 			?>
+			</div>
 		</div>
-	</div>
