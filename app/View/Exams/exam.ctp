@@ -99,7 +99,7 @@
 						echo '<br><p><span style="font-weight: bold;" >'.$numeroQ.')</span> '.$pergunta = $dis['TextQuestion']['question_text'].'</p>';
 
 						if(isset($dis['TextQuestion']['image'])) {
-						echo $this->Html->image('/upload/'.$alt['TextQuestion']['image'], array('alt' => 'uploaded image'));
+						echo $this->Html->image('/upload/'.$dis['TextQuestion']['image'], array('alt' => 'uploaded image'));
 						echo '<br><br>';
 						}
 						
