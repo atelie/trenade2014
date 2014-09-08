@@ -49,6 +49,8 @@
 					echo '</div>';
 				}
 
+				/*
+
 				foreach ($questoesDis as $dis) {	
 
 					echo '<div class="questions">';
@@ -60,6 +62,8 @@
 
 					echo '</div>';
 				}
+
+				*/
 			?>
             
 		</div>

@@ -27,7 +27,8 @@
             if ($this->request->is('post')) {
                 //Pega os ids de questões
                 $questions = array();
-                for ($id=1;$id<=15;$id++) {
+                //for ($id=1;$id<15;$id++) {    ----> versão final
+                for ($id=1;$id<15;$id++) {
                     $questions[$id] = $this->request->data['Exam'][$id];
                 }
                 
@@ -53,12 +54,16 @@
                     }   
                 }
 
+                /*
+
                 $questoesDis = array();
                 $questoesDis[1] = $this->TextQuestion->find('first',
                     array('conditions' => array('TextQuestion.id' => $questions[15])));
 
+                */
+
                 $this->set('questoesAlt', $questoesAlt);
-                $this->set('questoesDis', $questoesDis); 
+                //$this->set('questoesDis', $questoesDis); 
                 $this->set('respostasCertas', $answers_list);
                 $this->set('respostasUsuario', $answeredAlt);    
                 $this->set('score', $score);
@@ -120,7 +125,7 @@
                     'limit' => 1
                     ));
 
-                    if (($qtdAltConhecimentosGerais < 4) || ($qtdAltEspecificas < 10) || ($qtdTxtEspecificas < 1)) {
+                    if (($qtdAltConhecimentosGerais < 4) || ($qtdAltEspecificas < 10) /*|| ($qtdTxtEspecificas < 1) */) {
                         $this->Session->setFlash(__('<script> alert("Impossível gerar simulado!"); </script>',true));
                         $this->redirect(array('action' => 'generate'));
                     }

@@ -91,6 +91,7 @@
 					echo '</div>';
 				}
 
+				/*
 				foreach ($dissertativa as $dis) {	
 
 					echo '<div class="questions">';
@@ -111,6 +112,7 @@
 
 					echo '</div>';
 				}
+				*/
 			?>
 
 			<?php 
