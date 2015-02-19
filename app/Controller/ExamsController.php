@@ -27,8 +27,7 @@
             if ($this->request->is('post')) {
                 //Pega os ids de questões
                 $questions = array();
-                //for ($id=1;$id<15;$id++) {    ----> versão final
-                for ($id=1;$id<15;$id++) {
+                for ($id=1;$id<=15;$id++) {
                     $questions[$id] = $this->request->data['Exam'][$id];
                 }
                 
@@ -54,16 +53,12 @@
                     }   
                 }
 
-                /*
-
                 $questoesDis = array();
                 $questoesDis[1] = $this->TextQuestion->find('first',
                     array('conditions' => array('TextQuestion.id' => $questions[15])));
 
-                */
-
                 $this->set('questoesAlt', $questoesAlt);
-                //$this->set('questoesDis', $questoesDis); 
+                $this->set('questoesDis', $questoesDis); 
                 $this->set('respostasCertas', $answers_list);
                 $this->set('respostasUsuario', $answeredAlt);    
                 $this->set('score', $score);
@@ -97,67 +92,37 @@
                 if ($id_busca == '0') {
                     $this->Session->setFlash(__('<script> alert("Selecione o curso!"); </script>',true));
                     $this->redirect(array('action' => 'generate'));
-                } 
-                else {
+                } else {
                     $course = $this->Course->find('first', 
                     array( 'conditions' => array('Course.id' => $id_busca)));
                     $course_name = $course['Course']['name'];
                     $this->set('nome_curso', $course_name);
 
-                    $qtdAltConhecimentosGerais = $this->AltQuestion->find('count', array(
+                    $this->set('conhecimentos_gerais', $this->AltQuestion->find('all', array(
                     'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
                     'conditions' => array('AltQuestion.category_id' => '1'), 
                     'order' => 'rand()',
                     'limit' => 4
-                    ));
+                    )));
 
-                    $qtdAltEspecificas = $this->AltQuestion->find('count', array(
+                    $this->set('alternativas', $this->AltQuestion->find('all', array(
                     'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
                     'conditions' => array('AltQuestion.course_id' => $id_busca), 
                     'order' => 'rand()',
                     'limit' => 10
-                    ));
+                    )));
 
-                    $qtdTxtEspecificas = $this->TextQuestion->find('count', array(
+                    $this->set('dissertativa', $this->TextQuestion->find('all', array(
                     'fields' => array('DISTINCT id','question_text','image','answer_text'),
                     'conditions' => array('TextQuestion.course_id' => $id_busca), 
                     'order' => 'rand()',
                     'limit' => 1
-                    ));
+                    )));
 
-                    if (($qtdAltConhecimentosGerais < 4) || ($qtdAltEspecificas < 10) /*|| ($qtdTxtEspecificas < 1) */) {
-                        $this->Session->setFlash(__('<script> alert("Impossível gerar simulado!"); </script>',true));
-                        $this->redirect(array('action' => 'generate'));
-                    }
-                    else {
-
-                        $this->set('conhecimentos_gerais', $this->AltQuestion->find('all', array(
-                        'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
-                        'conditions' => array('AltQuestion.category_id' => '1'), 
-                        'order' => 'rand()',
-                        'limit' => 4
-                        )));
-
-                        $this->set('alternativas', $this->AltQuestion->find('all', array(
-                        'fields' => array('DISTINCT id','question_text','image','answerA','answerB','answerC','answerD','answerE', 'answer_id'),
-                        'conditions' => array('AltQuestion.course_id' => $id_busca), 
-                        'order' => 'rand()',
-                        'limit' => 10
-                        )));
-
-                        $this->set('dissertativa', $this->TextQuestion->find('all', array(
-                        'fields' => array('DISTINCT id','question_text','image','answer_text'),
-                        'conditions' => array('TextQuestion.course_id' => $id_busca), 
-                        'order' => 'rand()',
-                        'limit' => 1
-                        )));
-
-                        $this->set('numero_curso', $id_busca);
-                    }
+                    $this->set('numero_curso', $id_busca);
                 }
 
-            }
-            else {
+            }else {
                 $this->redirect(array('action' => 'generate'));
             }
 
@@ -176,7 +141,7 @@
 
                 if ($id_busca == '0') {
                     $this->Session->setFlash(__('<script> alert("Selecione o curso!"); </script>',true));
-                    $this->redirect(array('action' => 'number'));
+                    $this->redirect(array('action' => 'generate'));
                 } else {
                     $course = $this->Course->find('first', 
                     array( 'conditions' => array('Course.id' => $id_busca)));
@@ -209,7 +174,7 @@
                 }
 
             }else {
-                $this->redirect(array('action' => 'number'));
+                $this->redirect(array('action' => 'generate'));
             }
 
         }

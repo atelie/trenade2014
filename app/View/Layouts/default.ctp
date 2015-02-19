@@ -10,7 +10,9 @@
   <?php 
   echo $this->Html->css('bootstrap.css');
   echo $this->Html->css('sb-admin.css');
-  echo $this->Html->css('font-awesome/css/font-awesome.min.css');	
+  echo $this->Html->css('font-awesome/css/font-awesome.min.css');
+
+  echo $this->Html->script('jquery-1.10.2.js');	
   ?>
 
 </head>
@@ -156,6 +158,43 @@
               </ul>
             </li>
 
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-group"></i> Cursos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+
+                    <?php
+                      echo $this->Html->link(
+                         '<i class="fa fa-plus"></i> Adicionar Novo Curso',
+                          array(
+                              'controller'=>'courses',
+                              'action'=>'add',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
+                    ?>
+                </li>
+                <li>
+
+                    <?php
+                      echo $this->Html->link(
+                         '<i class="fa fa-plus"></i> Listar Cursos',
+                          array(
+                              'controller'=>'courses',
+                              'action'=>'index',
+                          ),
+                          array(
+                              'escape'=>false 
+                          )
+                      );
+                    ?>
+                </li>
+            
+              </ul>
+            </li>
+
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gears"></i> Configurações <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -257,7 +296,6 @@
 
     <?php 
 
-    echo $this->Html->script('jquery-1.10.2.js');
     echo $this->Html->script('jquery.validate.min.js');
     echo $this->Html->script('bootstrap.js');
     echo $this->Html->script('tablesorter/jquery.tablesorter.js');

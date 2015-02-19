@@ -1,3 +1,11 @@
+<script type="text/javascript">
+$(document).ready(function(){
+
+	check();
+});
+
+</script>
+
 <?php 
 
 $input_course = array(

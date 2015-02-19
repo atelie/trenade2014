@@ -1,4 +1,4 @@
-
+<a href="#" onclick="window.print();" style="float: right;"><i class="fa fa-print"></i> Imprimir Lista</a>
 	<div class="wrap">
 		<?php echo $this->Session->flash();?>
 		

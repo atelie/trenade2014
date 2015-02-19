@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-	check();
 	
 	$("#files").change(function() {
     	$("#imagemQuestao").html('<img src="'+window.URL.createObjectURL(this.files[0])+'" id="imagemVisualiza"  >');
@@ -54,7 +52,27 @@ $(document).ready(function(){
 	            },
 	        }
 	    }
+	  );
+
+	    //valida formulário de cadastro de curso
+	$("#CourseAddForm").validate(
+	    {
+	        errorElement: "span",
+	        errorClass: "text-danger",
+	        rules: { 
+	        	"data[Course][name]":{
+	                required : true
+	            }    
+	        },
+	        messages: {
+	        	"data[Course][name]":{
+	                required : "Insira o curso!"
+	            }
+	        }
+	    }
 	);
+
+
 
 
 	//valida formulário de cadastro de questao
